@@ -152,7 +152,7 @@
       {
         "name": "wine-prefix",
         "value": ".6s; delay .6s",
-        "purpose": "The heading prefix \u201cwho\u201d fades in while the word arrives."
+        "purpose": "The rest of the heading fades in while Not arrives."
       }
     ],
     "breakpoints": [
@@ -226,17 +226,17 @@
     {
       "name": "Wine reading title",
       "kind": "custom",
-      "description": "Static settled typography specimen only. The live application moves one persistent word into the measured lunch. destination before handing visibility to the semantic heading.",
+      "description": "Static settled typography specimen only. The live application moves one persistent word into the measured Not destination before handing visibility to the semantic heading.",
       "html": "<h2 class=\"ds-wine-title\"><span class=\"ds-wine-first\">Not the ladies </span><span class=\"ds-wine-second\"><span>who </span><span>lunch.</span></span></h2>",
       "css": ".ds-wine-title{font-family:Manrope,sans-serif;color:var(--ink,#302d2b);font-size:clamp(30px,3.4vw,52px);line-height:1.07;letter-spacing:-.04em;font-weight:400;margin:0 0 26px}.ds-wine-first{display:block}.ds-wine-second{display:block;text-align:right;padding-right:6%;font-weight:550}.ds-wine-second{white-space:nowrap}"
     }
   ],
   "narrative": {
     "northStar": "An optical event, then stillness",
-    "overview": "The invitation preserves V2\u2019s warm paper, dark Manrope typography, essential event information and four sourced narrative identities. The wine entry is now an optical event: a fine line is refracted while one persistent visible word rotates and skews, then travels and scales into its exact heading slot as an asymmetrical reading space opens. The other three SVG anchors move to the edge during this discovery.\n\nThe latest owner brief asks for evolution of the surviving V2, not another redesign. This branch implements one vertical slice. Quietness and consequential interaction replace continuous material decoration. The build is not human-approved, and artistic surprise is an intention requiring review rather than a proven property.",
+    "overview": "The owner rejected the large circle and exposed lunch. The wine field is now an analytic hairline discontinuity. First activation reveals a small Not; second activation moves it into the sentence. No visible lens or idle word remains. The invitation and three other discoveries are preserved. See DESIGN.md and docs/LINE-REVIEW.md for current source truth and verification.",
     "keyCharacteristics": [
       "Warm paper and restrained dark text, with the established copper interface accent.",
-      "Locally drawn line textures, a persistent DOM word and a shader lens.",
+      "An analytic broken ray with no lens outline or idle word.",
       "A finite opening followed by stillness; new frames respond to interaction or state changes.",
       "Wine reading space with displaced typography; three preserved discoveries remain accessible."
     ],

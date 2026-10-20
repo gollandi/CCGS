@@ -35,3 +35,8 @@
 @media(max-width:760px){.optical-word{left:36.4%;font-size:62px}}
 @media(max-width:360px){.optical-word{font-size:53px}}
 @media(max-height:500px) and (min-width:761px){.optical-word{font-size:52px}}
+/* Distilled wine event: no lens silhouette or exposed word at rest. */
+.optical-word{font-size:24px;font-weight:400;opacity:0;color:var(--ink);letter-spacing:-.035em}.object-position-0{width:64%;height:110px;min-height:100px}.optical-target{border-radius:0}.object-position-0 .object-caption{display:none}.wine-word-destination{visibility:visible;opacity:0}.experience:has(.optical-word[data-arrived="true"]) .wine-word-destination{opacity:1}.wine-story h2{font-size:clamp(27px,2.6vw,38px)}.wine-line-two{text-align:left;padding-left:19%;font-weight:400}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:760px){.optical-word{font-size:22px}.object-position-0{left:36.4%;top:45%;width:68%;height:100px}.wine-story h2{font-size:28px}.wine-line-two{padding-left:14%}}
+@media(max-width:360px){.wine-story h2{font-size:24px}}
+@media(max-height:500px) and (min-width:761px){.wine-story h2{font-size:26px}}

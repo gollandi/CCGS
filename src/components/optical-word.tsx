@@ -3,7 +3,7 @@
 import { useLayoutEffect, useRef, useState, type RefObject } from 'react';
 import gsap from 'gsap';
 
-/** One visible word crosses from the optical field into the sentence. */
+/** A word appears at the fracture, then becomes the beginning of a sentence. */
 export function OpticalWord({ stage, open, hidden, motionOff, intention }: {
   stage: RefObject<HTMLDivElement | null>;
   open: boolean;
@@ -12,8 +12,6 @@ export function OpticalWord({ stage, open, hidden, motionOff, intention }: {
   intention: number;
 }) {
   const word = useRef<HTMLSpanElement>(null);
-  const played = useRef(false);
-  const previousIntention = useRef(0);
   const [arrived, setArrived] = useState(false);
 
   useLayoutEffect(() => {
@@ -32,22 +30,14 @@ export function OpticalWord({ stage, open, hidden, motionOff, intention }: {
         gsap.to(element, {
           x: target.left + target.width / 2 - origin.left - parseFloat(style.left),
           y: target.top + target.height / 2 - origin.top - parseFloat(style.top),
-          scale: target.height / element.offsetHeight,
-          rotation: 0, skewY: 0, color: '#302d2b',
-          duration: motionOff || immediate ? 0 : 1.2, ease: 'power3.inOut',
+          scale: target.height / element.offsetHeight, opacity: 1,
+          clipPath: 'inset(0% 0% 0% 0%)', rotation: 0, skewY: 0,
+          duration: motionOff || immediate ? 0 : 1.1, ease: 'power3.inOut',
           onComplete: () => setArrived(true),
         });
       } else {
         setArrived(false);
-        if (!played.current && !motionOff && !immediate) {
-          played.current = true;
-          gsap.timeline().set(element, { x: 0, y: 0, scale: 1, rotation: 0, skewY: 0, color: '#593940' })
-            .to(element, { rotation: -32, skewY: -10, duration: 1, ease: 'power3.out' }, .5)
-            .to(element, { rotation: -10, skewY: -4, duration: 1.5, ease: 'power2.out' }, 1.5);
-        } else {
-          gsap.to(element, { x: 0, y: 0, scale: 1, rotation: motionOff ? 0 : -10,
-            skewY: motionOff ? 0 : -4, color: '#593940', duration: motionOff || immediate ? 0 : .9, ease: 'power3.inOut' });
-        }
+        gsap.set(element, { x: 0, y: -17, scale: 1, opacity: 0, clipPath: 'inset(52% 0% 48% 0%)', rotation: 0, skewY: 0 });
       }
     }
     position();
@@ -57,13 +47,14 @@ export function OpticalWord({ stage, open, hidden, motionOff, intention }: {
   }, [open, motionOff, stage]);
 
   useLayoutEffect(() => {
-    if (!open && !motionOff && (intention > 0 || previousIntention.current > 0)) {
-      gsap.to(word.current, { rotation: -10 - intention * 35, skewY: -4 - intention * 12,
-        duration: .45, ease: 'power3.out', overwrite: true });
+    if (!open) {
+      gsap.to(word.current, { opacity: intention > 0 ? 1 : 0,
+        clipPath: intention > 0 ? 'inset(0% 0% 0% 0%)' : 'inset(52% 0% 48% 0%)',
+        y: intention > 0 ? -24 : -17,
+        duration: motionOff ? 0 : .7, ease: 'power3.out', overwrite: true });
     }
-    previousIntention.current = intention;
   }, [intention, open, motionOff]);
 
   return <span ref={word} className="optical-word" aria-hidden="true" data-arrived={open && arrived}
-    style={{ visibility: hidden || (open && arrived) ? 'hidden' : 'visible' }}>lunch.</span>;
+    style={{ visibility: hidden || (open && arrived) ? 'hidden' : 'visible' }}>Not</span>;
 }
