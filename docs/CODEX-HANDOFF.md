@@ -1,3 +1,7 @@
+# Current handoff correction — 20 October 2026
+
+The owner rejected M1 and explicitly commissioned a replacement with several sourced discoveries. The old milestone approval boundary below no longer prevents this authorised revision. No serif, no rigid decorative bow, no wedding discovery, no literal mockup copy. See PRODUCT.md, DESIGN.md, docs/DISCOVERIES.md and docs/V2-REVIEW.md for current implementation and validation. RSVP destination remains unconfigured.
+
 # Codex handoff
 
 Build a Next.js/React/TypeScript interactive invitation for the CCGS Annual Autumn Event, Wednesday 4 November 2026 at 19:00, No. Fifty Cheyne, 50 Cheyne Walk, Chelsea SW3 5LR.

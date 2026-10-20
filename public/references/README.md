@@ -1,3 +1,5 @@
+> Current owner correction (20 October 2026): all references are conceptual. No serif typography, no literal reproduction of the mockup, no rigid bow. The reattached landscape PNG matches `subtractive-direction.png` exactly. See the manifest for limits.
+
 # Visual references
 
 All four PNGs below are stored in this repository. No separate bundle is required.

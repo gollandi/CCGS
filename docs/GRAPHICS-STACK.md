@@ -60,4 +60,4 @@ Package licence metadata was checked at selection: MIT for the core libraries an
 - `pnpm audit --prod --audit-level high`: reported no known vulnerabilities at the time of checking.
 - Production server: HTTP 200 with the essential event details in the initial HTML.
 - The four reference image checksums remain unchanged.
-- This section records the earlier foundation checks. Subsequent browser rendering and interaction checks are recorded in `docs/M1-REVIEW.md`; physical iPhone Safari validation remains outstanding.
+- This section records the earlier foundation checks. The rejected M1 checks are historical; current browser rendering and interaction checks are recorded in `docs/V2-REVIEW.md`; physical iPhone Safari validation remains outstanding.

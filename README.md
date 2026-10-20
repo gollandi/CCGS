@@ -1,22 +1,29 @@
-# CCGS — Annual Autumn Event 2026
+# CCGS Annual Autumn Event
 
-Creative source of truth: [Creative direction](docs/CREATIVE-DIRECTION.md).
+An interactive invitation for 4 November 2026, 19:00, No. Fifty Cheyne, Chelsea. Consultant only.
 
-Codex implementation: [Handoff](docs/CODEX-HANDOFF.md).
-
-Content and fact checking: [Content](docs/CONTENT.md).
-
-Visual references are stored directly in [public/references/](public/references/README.md), with a [provenance and integrity manifest](public/references/manifest.json). No separate download is required. The experience is single-viewport, touch-first, non-scrolling, with a living translucent form and immediately readable event details.
-
-Codex starts with [AGENTS.md](AGENTS.md), then the creative direction, handoff and content documents. The repository includes the brief, reference assets and an executable foundation. M1 is implemented and ready for creative review. See [M1 review](docs/M1-REVIEW.md) for interaction behaviour and validation. See [Graphics stack](docs/GRAPHICS-STACK.md) for the selected libraries and implementation guidance.
-
-## Local development
-
-Use Node 22 or later and pnpm 11.3.0.
+## Run locally
 
 ```sh
 pnpm install --frozen-lockfile
-pnpm dev
+pnpm dev --hostname 0.0.0.0 --port 3216
 ```
 
-Validation: `pnpm test`, `pnpm typecheck` and `pnpm build`. Event details remain in server-rendered HTML. Run `pnpm start --hostname 0.0.0.0 --port 3216` after building to preview on this Mac and, where network settings permit, a phone on the same local network.
+Production preview: `pnpm build` then `pnpm start --hostname 0.0.0.0 --port 3216`. Open http://127.0.0.1:3216 on the host Mac.
+
+## Current revision
+
+A restrained sans serif invitation, a procedural translucent light field and four objects revealing sourced stories about wine, the executive chef, dogs and an unlikely neighbour. Touch or drag an object, or use Tab and Enter/Space. Escape or the return control closes the story. The pause control selects still artwork. System reduced motion and rendering failures retain a static fallback. Calendar export is functional; RSVP response collection is not configured.
+
+- [Product and current owner direction](PRODUCT.md)
+- [Built design system](DESIGN.md)
+- [Sourced discoveries and research limits](docs/DISCOVERIES.md)
+- [Current validation](docs/V2-REVIEW.md)
+- [Reference asset manifest](public/references/manifest.json)
+- [Graphics dependencies](docs/GRAPHICS-STACK.md)
+
+The owner rejected the original M1. Its historical review is retained, clearly marked, and does not establish creative acceptance of either version. The latest mockup attachment matches the existing subtractive-direction asset byte for byte; its role is conceptual, never literal reproduction.
+
+## Check
+
+`pnpm typecheck`, `pnpm test`, `pnpm build`. Browser evidence is separate from physical-device and public-deployment verification.

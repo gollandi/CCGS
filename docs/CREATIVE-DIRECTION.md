@@ -1,3 +1,7 @@
+# Current owner correction — 20 October 2026
+
+The owner rejected the first implementation: no serif fonts, no rigid decorative bow, no wedding-focused discovery. The supplied subtractive-direction image is conceptual only. Preserve light, transparency, tension, warmth and restraint; do not reproduce its layout, typography, crown or literal imagery. The replacement should make essential details easy, make guests want to attend and explore, and reward curiosity with surprising sourced stories. The earlier brief below is historical and subordinate to these explicit corrections.
+
 # Creative direction — approved decisions and rejected paths
 
 ## North star

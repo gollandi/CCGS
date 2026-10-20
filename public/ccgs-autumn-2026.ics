@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//CCGS//Annual Autumn Event 2026//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ccgs-annual-autumn-event-2026@ccgs.local
+DTSTAMP:20261020T120000Z
+DTSTART:20261104T190000Z
+SUMMARY:CCGS Annual Autumn Event
+LOCATION:No. Fifty Cheyne\, 50 Cheyne Walk\, Chelsea\, London SW3 5LR
+DESCRIPTION:Consultant only. Celebrating what we have built together.\nRS
+ VP details will follow from the organiser. End time is not confirmed.
+END:VEVENT
+END:VCALENDAR

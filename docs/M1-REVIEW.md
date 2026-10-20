@@ -1,3 +1,5 @@
+> Historical review of the first implementation. The owner rejected this version on 20 October 2026. See V2-REVIEW.md for its replacement.
+
 # M1 — creative review
 
 Status: implemented locally and ready for creative review. M2 is not started. No public deployment or creative approval is claimed.

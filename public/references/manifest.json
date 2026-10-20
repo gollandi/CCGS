@@ -61,11 +61,13 @@
         "basis": "Observed user messages in the source conversation, consistent with the existing creative-direction document.",
         "summary": "The user accepted the concept while requiring further work on visibility and contrast."
       },
-      "usage_limits": "Compositional direction only. Improve contrast, hierarchy and legibility; keep required event details and CONSULTANT ONLY even where the mockup omits them. Do not transcribe incidental mockup labels as approved copy.",
+      "usage_limits": "Conceptual reference only for light, transparency, tension and restraint. On 20 October 2026 the owner explicitly rejected literal reuse of this mockup, including serif typography and its composition. Not verified venue photography.",
       "verification": {
         "date": "2026-10-20",
         "conversation_byte_match": true,
-        "visually_inspected": true
+        "visually_inspected": true,
+        "reattached_file_byte_match": true,
+        "reattachment_note": "Owner reattached ChatGPT Image 20 Oct 2026, 15_15_43.png; SHA-256 matches this existing asset exactly. No duplicate asset added."
       }
     },
     {
