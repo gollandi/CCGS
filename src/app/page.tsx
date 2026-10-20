@@ -5,11 +5,10 @@ export default function Invitation() {
   return <main className="invitation">
     <header className="masthead">
       <a href="/" className="wordmark" aria-label="Chelsea Centre for Gender Surgery home"><span className="monogram">ccgs<span aria-hidden="true">.</span></span><span>Chelsea Centre<br />for Gender Surgery</span></a>
-      <span className="audience">Consultant only</span>
+      <span className="audience">CONSULTANT ONLY</span>
     </header>
     <section className="event-copy" aria-labelledby="event-title">
-      <h1 id="event-title">Annual<br /><span>Autumn Event</span></h1>
-      <p className="invitation-line">An evening for what comes next.</p>
+      <h1 id="event-title">Annual<br /><span>Autumn Event</span><span className="event-year">2026</span></h1>
     </section>
     <Experience />
     <section className="event-details" aria-label="The evening">

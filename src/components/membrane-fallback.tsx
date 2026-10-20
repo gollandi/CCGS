@@ -1,1 +1,7 @@
-export function MembraneFallback(){return <svg className="membrane-fallback" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="still-light" x1="0" y1="0" x2="1" y2="1"><stop stopColor="#fff" stopOpacity="0"/><stop offset=".4" stopColor="#fff" stopOpacity=".6"/><stop offset=".52" stopColor="#b5a38c" stopOpacity=".13"/><stop offset=".7" stopColor="#fff" stopOpacity=".7"/><stop offset="1" stopColor="#d5b18c" stopOpacity="0"/></linearGradient></defs><path d="M20 190C350 470 530 0 980 500C560 270 390 700 20 190Z" fill="url(#still-light)" stroke="#a78a68" strokeOpacity=".3" strokeWidth=".7"/><path d="M20 190C370 570 570 100 980 500C590 190 350 480 20 190Z" fill="url(#still-light)" stroke="white" strokeOpacity=".8" strokeWidth="1"/></svg>;}
+export function MembraneFallback(){
+  return <svg className="membrane-fallback" viewBox="0 0 1000 650" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M35 293H190C255 293 259 238 315 242C377 246 412 341 476 329C536 317 537 293 600 293H960" fill="none" stroke="#93847a" strokeWidth=".8"/>
+    <ellipse cx="400" cy="293" rx="210" ry="210" fill="none" stroke="#b8aaa0" strokeWidth=".5"/>
+
+  </svg>;
+}

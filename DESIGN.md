@@ -1,6 +1,6 @@
 ---
 name: CCGS Annual Autumn Event
-description: Warm paper, translucent light and four object-led discoveries.
+description: A finite wine-refraction event within the preserved CCGS invitation.
 colors:
   copper: "#916242"
   paper: "#eeebe5"
@@ -21,6 +21,12 @@ typography:
     fontWeight: 450
     lineHeight: 1.12
     letterSpacing: "-0.035em"
+  wine-headline:
+    fontFamily: "Manrope, sans-serif"
+    fontSize: "clamp(30px, 3.4vw, 52px)"
+    fontWeight: 400
+    lineHeight: 1.07
+    letterSpacing: "-0.04em"
   story-body:
     fontFamily: "Manrope, sans-serif"
     fontSize: "14px"
@@ -57,86 +63,101 @@ components:
 
 ## Overview
 
-**Creative North Star: "Light, tension and discovery"**
+**Creative North Star: "An optical event, then stillness"**
 
-The implemented invitation uses warm paper, dark sans serif text and a translucent field of light. Four individually authored SVG objects provide the entry points to sourced stories; restrained text controls leave the objects visible as the principal interaction.
+The invitation preserves V2’s warm paper, dark Manrope typography, essential event information and four sourced narrative identities. The wine entry is now an optical event: a fine line is refracted while one persistent visible word rotates and skews, then travels and scales into its exact heading slot as an asymmetrical reading space opens. The other three SVG anchors move to the edge during this discovery.
 
-This is the replacement for the rejected serif, rigid bow and wedding concept. The supplied reference contributes conceptual transparency, light and tension only. The current build has not received human creative approval; delight is an intended effect, not an established result.
+The latest owner brief asks for evolution of the surviving V2, not another redesign. This branch implements one vertical slice. Quietness and consequential interaction replace continuous material decoration. The build is not human-approved, and artistic surprise is an intention requiring review rather than a proven property.
 
 **Key Characteristics:**
-- Warm paper with copper accents and dark text.
-- One locally hosted sans serif family, with weight carrying hierarchy.
-- Procedural light behind distinct glass, flame, dog-tag ring and leaf objects.
-- Persistent event information with one discovery shown at a time.
 
-**Evidence status — OBSERVED in source, 20 October 2026:** extracted from `src/app/globals.css`, `src/app/page.tsx`, `src/components/experience.tsx`, `src/components/membrane-scene.tsx` and `src/components/story-objects.tsx`. Read with `cat` and `tail`; the output contains the tokens, components and responsive overrides described below. This document records implementation, not a new browser validation. `PRODUCT.md` and the latest owner correction define the constraints. The exploratory seed `ae3891cc` is overridden by the user's pinned brief and delegated construction; it is not visual authority.
+- Warm paper and restrained dark text, with the established copper interface accent.
+- Locally drawn line textures, a persistent DOM word and a shader lens.
+- A finite opening followed by stillness; new frames respond to interaction or state changes.
+- Wine reading space with displaced typography; three preserved discoveries remain accessible.
+
+**OBSERVED in source, 20 October 2026:** `git branch --show-current` returned `feat/refraction-art-slice`. Reads of `src/app/globals.css`, `src/app/page.tsx`, `src/components/experience.tsx`, `src/components/membrane-scene.tsx`, `src/components/membrane-fallback.tsx`, `src/components/optical-word.tsx` and `src/lib/refraction.ts` contain the values and behaviours described here. This extraction does not perform a new browser test. Safari desktop and Chrome responsive observations are documented separately in `docs/REFRACTION-REVIEW.md`; physical iPhone testing and universal compatibility remain unverified. Current owner instructions override historical M1/replacement wording and the exploratory seed `ae3891cc`.
 
 ## Colors
 
-Copper is the single interface accent, used for the monogram dot, focus outline and active discovery underline. Paper is the page ground; ink carries essential information, muted carries supporting text, line separates the RSVP popover, and popover supplies its slightly lighter ground.
+Copper retains its interface role in the monogram, focus outline and active switcher underline. Paper is the ground; ink carries essential information, muted carries supporting copy, line separates the RSVP explanation, and popover supplies that explanation's lighter surface.
 
-The SVG artwork has its own glass, wine, fire and metal gradients. Those are authored materials within each object, not interchangeable interface accents. The procedural membrane mixes warm highlights, copper rims and a subtle wine tint when the wine story is selected. The background has low-opacity radial light and an SVG noise texture.
+The final stylesheet replaces the earlier radial background with flat paper and reduces the noise overlay opacity. The optical plate uses fine warm-grey lines; the separate DOM word begins in muted wine and settles into ink in the heading. These artwork-local colours do not establish a new application palette. The three remaining SVG objects are desaturated at rest and gain definition on hover or keyboard focus. Their original gradients remain in their SVG source; the wine-glass SVG is no longer mounted in the wine entry.
 
-**The Legible Ground Rule.** Event text sits on the paper ground; the light field must not become the reading surface for essential information.
+**The Legible Ground Rule.** Essential event text stays on the paper ground and remains independent of the optical texture.
 
 ## Typography
 
-Manrope is declared locally at `/fonts/manrope-variable.ttf`, with weights 200–800 and `font-display: swap`; the fallback is sans serif. The file and `public/fonts/manrope-OFL.txt` are present. Historical serif and DM Sans files remain in the assets directory but are not referenced by the current stylesheet.
+Manrope is local at `/fonts/manrope-variable.ttf`, with declared weights 200–800 and `font-display: swap`. No external font service is required. Historical font files are not evidence of their use in the current stylesheet.
 
-The event title pairs a light first line with a medium second line. Story headings use intermediate weight, tight tracking and balanced wrapping. Story prose is limited to 43 characters on desktop and 48 on mobile. The frontmatter records the desktop roles, not every responsive override. At mobile widths the final CSS cascade uses 13px story prose, dropping to 12px in compact-height mode; ancillary copy is smaller. These implemented sizes are not an accessibility certification.
+The event heading retains its light/medium contrast and now includes a separate year. The former invitation supporting line is absent from the current page. The wine title separates “Not the ladies” and “who lunch.” spatially: the second line aligns right and uses weight 550. Its body is inset on desktop and returns to the left on mobile. Other story headings retain the V2 hierarchy. Frontmatter records desktop baselines; the stylesheet contains the responsive overrides.
+
+Wine prose is limited to 40ch and its aside to 44ch. Standard wine prose is 14px on desktop and 13px on mobile, with 12px compact-mobile and short-desktop variants and an 11px short-landscape variant. These are observed sizes, not accessibility certification. The optical word is a persistent DOM span in Manrope, independently transformed through authored rotation and skew. The shader refracts line textures only. On opening, the visible word travels to the measured position and height of the heading’s “lunch.” slot; at rest the travelling span hides and the semantic heading word becomes visible. This handoff lets the reading region scroll normally. The decorative travelling span is aria-hidden. No explanatory subtitle remains in the optical plate.
 
 ## Layout
 
-The normal composition occupies one small-viewport-height canvas. The wordmark sits above the title, the object field occupies the centre and right, and date, venue and calendar controls anchor the lower edge. Desktop positions are absolute; the event detail group becomes a two-column grid on mobile. The implementation has minimum canvas heights, so a strict no-scroll claim cannot cover every browser, zoom or viewport.
+The ordinary composition remains a single small-viewport-height invitation, with the wordmark/title above and the date, venue and event actions below. The artwork occupies the centre/right on desktop and the space between title and details on mobile. The wine button is a transparent optical target over the lens, not a drawn glass. Its prompt appears on hover or keyboard focus; there is no idle exploration instruction or visible plus/dash marker.
 
-Mobile treatment begins at 760px. Compact mobile height (750px or less) reduces the title to one line while a story is open, hides the invitation line and reserves more room for reading. The selected object is secondary to story text and disappears in tighter layouts. Other source breakpoints handle 360px width, desktop heights up to 760px, and landscape heights up to 500px.
+Opening wine enlarges the lens circumference, fades its texture and reveals a reading composition across the artwork area. The other three anchors remain interactive at its right edge. The wine title uses offset lines and the prose has a different left edge; the wine state has no four-item switcher. Selecting one of the remaining anchors opens its retained story route, which still uses the earlier story composition and text switcher.
 
-**The Reading Escape Rule.** A story may scroll internally when its content exceeds the available height. At widths of 300px or less, the whole invitation deliberately reflows into normal document flow and may scroll. These are accessibility escape routes, not failures to preserve the ordinary single-viewport composition.
+Mobile treatment begins at 760px. Compact mobile height, 360px width, short desktop and short landscape have additional rules. The title compacts while reading; the separately displayed year is hidden in the compact open-story title, while the full date below still contains 2026.
 
-The story region has `tabIndex=0`, thin scrollbars and contained overscroll. No claim is made here about physical iPhone testing, every device, every text scale or assistive-technology combinations.
+**The Reading Escape Rule.** Compact and mobile stories may scroll internally. At widths of 300px or less the invitation deliberately reflows and may scroll as a document. These preserve reading access outside the ordinary one-viewport composition.
+
+The wine region uses visible overflow on ordinary desktop and internal overflow on mobile/short viewports. The shared region is keyboard-focusable and scroll position resets on a story change. Minimum canvas heights and responsive exceptions preclude a blanket no-scroll or all-device claim.
 
 ## Elevation & Depth
 
-Depth comes primarily from the transparent shader layers, drawn reflections, SVG gradients and small object shadows. The membrane is a procedural full-screen plane shader with three curved bands and local pointer interference; it is not a cloth simulation or refraction of a real restaurant photograph. Pointer location and energy alter the nearby wave and band displacement. Pointer coordinates are normalised to the light-field bounds. Static screenshots cannot establish the quality of this dynamic response.
+A transparent plane shader samples two locally drawn canvas textures containing the same fine parallel lines. Within the lens it rotates, compresses and offsets texture coordinates, adds a mirrored line echo and draws a fine optical circumference. Pointer position is normalised to the actual light-field bounds. The shader has no three-band membrane, photograph sampling, cloth simulation or floating ribbon.
 
-Objects use a low-opacity drop shadow; the RSVP explanation has a light box shadow and border. The source values are recorded in the sidecar. Interface controls otherwise remain flat, with no raised card system.
+Wine opening changes the lens centre and radius while fading the line texture; the persistent word travels into the HTML reading composition. This combines shader refraction of lines with DOM rotation, skew and measured travel of the word; it does not refract arbitrary document content. The final object filter is desaturation rather than the earlier object drop shadow. The RSVP explanation retains its small box shadow and border. Static screenshots alone cannot prove the dynamic quality or consequence of the transformation.
 
 ## Shapes
 
-The object vocabulary comprises a wine glass, a flame above a small holder, a ring with a paw-print dog tag, and an autumn leaf. Each is authored inline SVG with unique gradient identifiers. The dog-tag ring is not a wedding narrative. Pointer input changes object paths or group transforms; each silhouette retains its own material response.
+The wine shape is an optical discontinuity with an invisible, elliptical button target. The visible lens is rendered by the shader; the CSS target's roundness is not a general container radius. The other authored SVG shapes remain a flame, paw-print dog-tag ring and leaf. The dog-tag ring retains the Dogs narrative. Their pointer-driven path/group changes survive, but their perpetual idle animations are disabled by final CSS overrides.
 
-Text controls use fine underlines and open spacing. The implemented controls do not establish a rounded-container scale; no radius scale is invented here.
+Text controls retain fine underlines and open spacing. No card or rounded-container scale is introduced.
 
 ## Components
 
-### Object discoveries
+### Wine refraction
 
-Four real buttons reveal four sourced stories: Wine, Chef, Dogs and Neighbours. Hover, press and drag affect the relevant object; a reveal recogniser distinguishes completion from cancellation. Opening a story hides the other objects, dims the light field and moves the selected object aside. A visited discovery replaces its plus mark with a dash. Captions and accessible labels describe the discovery without requiring a drag.
+The wine entry remains a real labelled button. Focus or hover energises the lens; a deliberate pointer displacement increases intent after a small dead zone. Tap/click and keyboard activation can open it without requiring a drag. Cancellation and lost capture reset the interaction. When open, its own button is hidden and the other three anchors move outward; the source link and contextual wine-selection disclaimer remain visible within the reading region.
 
-### Story and navigation
+### Other discoveries and reading access
 
-One in-place, labelled region contains a Back button, heading, body, contextual aside, source links and a four-item text switcher. It is not a modal dialog. Opening it moves focus to Back; Escape or Back closes it and restores focus to the originating object. Source links open separately, and the current switcher item has a copper underline. Source provenance and editorial limits live in `docs/DISCOVERIES.md`; these venue stories do not promise the event menu, wines or pet arrangements.
+Chef, Dogs and Neighbours keep their sourced narratives, SVG anchors and prior reading routes. They are preserved functionality, not three additional completed artistic slices. A labelled region contains Back, heading, prose, aside and source links. Wine omits the text switcher; other discoveries retain it. Entry focuses Back; Escape or Back restores focus to the originating button. Source links open separately. No modal focus trap is introduced.
+
+`docs/DISCOVERIES.md` remains the source register. The sample wine list does not promise the event's wine. The chef's menu detail is not the event menu; pet arrangements are unconfirmed; Rossetti's number 16 is distinct from the venue at number 50. This documentation update does not recheck those external sources.
 
 ### Event actions
 
-“Keep the evening” is an underlined calendar download with a small arrow that shifts on hover. “RSVP details” is a native disclosure whose popover explains that a response is not yet collected. No RSVP success or submission state exists. The masthead wordmark links home.
+“Keep the evening” downloads the calendar entry. “RSVP details” remains a native disclosure explaining that no response is collected. Neither the artwork nor calendar action invents a submission endpoint. The wordmark links home; the footer preserves the collective celebration line.
 
-### Motion and fallback
+### Finite motion and static routes
 
-The pause control has an implemented 44px square target. Its final positioning keeps it at the top right of the desktop experience, below the idle mobile field, and above the mobile story. It is omitted when the operating system already requests reduced motion and hidden in the narrow open-story layout. Reduced motion or manual pause stops the object animation and removes the WebGL scene, retaining static membrane artwork. Hidden-tab state stops the frame loop; rendering uses a capped pixel ratio and low-power preference. Errors or context loss retain the static fallback.
+The opening score is zero through 0.5 seconds, rises to its inversion at 1.5 seconds, and settles to a fixed trace by 3 seconds. These are accumulated active renderer seconds after textures load, with delta capped at 0.05 seconds; they are not a guarantee of wall-clock timing from navigation on every device. The shader score is per mounted scene, so remounting after manual pause can replay it. The word has its own once-per-component opening choreography and therefore a separate lifecycle.
 
-Ordinary object transitions use the source's soft deceleration curve; slow material loops differ for wine, flame, tag and leaf. Story entry uses a short opacity and vertical transition. Essential event copy is server-rendered, and a no-script discovery list preserves text and sources. Those are implemented fallbacks, not proof of universal compatibility.
+Rendering uses `frameloop="demand"`. Frames are invalidated during the opening, input interpolation and open/close convergence; the loop stops requesting further frames when those settle. Hidden-document state prevents active progression. Hover/focus, pointer input and story changes can wake the scene. There is no perpetual shader clock or visible material loop.
+
+The first wine title line enters over 0.95s. The existing word travels/scales into its destination over 1.2s; “who” fades in over 0.6s after a 0.6s delay. Body, aside and sources reveal through clipped masks. A GSAP context reverts these transient story-entry styles on cleanup, including when pause changes the motion state, so interrupted masks do not remain. Reduced motion makes word placement immediate and skips entry choreography. The other stories retain their shorter entry. Resize remeasures the word destination and positions it immediately. Existing object position transitions remain; the slice does not impose one animation on every object.
+
+Reduced motion or manual pause unmounts the WebGL scene and keeps a static SVG line and lens alongside the DOM word. The fallback has no duplicate text and is hidden in the open wine state. Context loss or component failure retains the line/lens fallback; unsupported WebGL alone does not disable the separate DOM word choreography. The pause/resume button has a 44px square target and is omitted under the system reduced-motion preference or hidden in the narrow open-story layout. Event content is server-rendered; the no-script route preserves all story text and source links through native disclosures. Those fallbacks preserve access without claiming to reproduce the interactive optical effect.
 
 ## Do's and Don'ts
 
 ### Do:
-- Do preserve the current owner correction over historical mockup or M1 instructions.
+
+- Do preserve V2’s working content and access while refining the single wine slice.
 - Do keep essential event information available before JavaScript and animation.
 - Do retain source links and the boundaries recorded in docs/DISCOVERIES.md.
-- Do preserve reduced-motion, fallback, focus restoration and readable overflow routes.
+- Do preserve reduced-motion, static fallback, focus restoration and readable overflow routes.
+- Do keep work on feat/refraction-art-slice and require review before merging into main or expanding the treatment.
 
 ### Don't:
-- Don't reintroduce serif type, the rigid decorative bow or the wedding story.
-- Don't reproduce the reference composition literally or describe concept art as venue photography.
-- Don't turn the object field into a dashboard of cards or pills.
-- Don't describe calendar export as RSVP, or local implementation as human approval or all-device certification.
+
+- Don't restore floating ribbons or perpetual decorative material loops.
+- Don't reintroduce serif type, the rigid bow or the wedding story.
+- Don't reproduce the reference literally or describe concept art as venue photography.
+- Don't turn discoveries into dashboard cards or disguise calendar export as RSVP.
+- Don't equate source extraction, screenshots or browser checks with creative approval or physical iPhone certification.

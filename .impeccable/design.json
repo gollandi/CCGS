@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-20T16:10:38.777362+00:00",
+  "generatedAt": "2026-10-20T18:16:28.791798+00:00",
   "title": "Design System: CCGS Annual Autumn Event",
   "extensions": {
     "colorMeta": {
@@ -105,14 +105,13 @@
       "label": {
         "displayName": "Quiet labels",
         "purpose": "Supporting controls and captions."
+      },
+      "wine-headline": {
+        "displayName": "Wine reading title",
+        "purpose": "Asymmetric two-line title, desktop baseline; second line is heavier and right-aligned."
       }
     },
     "shadows": [
-      {
-        "name": "object",
-        "value": "9px 22px 10px #77624d0b",
-        "purpose": "SVG filter drop-shadow, not CSS box-shadow."
-      },
       {
         "name": "rsvp",
         "value": "0 12px 25px #59473313",
@@ -121,19 +120,39 @@
     ],
     "motion": [
       {
+        "name": "opening-score",
+        "value": "0\u20133 active renderer seconds",
+        "purpose": "Finite anticipation, inversion and fixed trace; not guaranteed wall-clock navigation timing."
+      },
+      {
         "name": "object-position",
         "value": ".8s cubic-bezier(.16,1,.3,1)",
-        "purpose": "Object spatial transition."
+        "purpose": "Preserved anchor position transitions, not idle loops."
       },
       {
-        "name": "story-entry",
+        "name": "wine-title-first",
+        "value": ".95s power4.out",
+        "purpose": "First line enters from the left."
+      },
+      {
+        "name": "wine-reading-reveal",
+        "value": ".7s power3.out; stagger .08s",
+        "purpose": "Finite clipped reveal of prose, aside and sources."
+      },
+      {
+        "name": "other-story-entry",
         "value": ".45s power3.out",
-        "purpose": "GSAP opacity and vertical entry; omitted when motion is off."
+        "purpose": "Retained entry for the other three discoveries."
       },
       {
-        "name": "material-loops",
-        "value": "3.7s\u20137s ease-in-out infinite",
-        "purpose": "Distinct SVG material animations, disabled with reduced motion or pause."
+        "name": "wine-word-travel",
+        "value": "1.2s power3.inOut",
+        "purpose": "Persistent DOM word travels/scales to the heading destination, then semantic text takes over at rest."
+      },
+      {
+        "name": "wine-prefix",
+        "value": ".6s; delay .6s",
+        "purpose": "The heading prefix \u201cwho\u201d fades in while the word arrives."
       }
     ],
     "breakpoints": [
@@ -192,7 +211,7 @@
       "name": "Story switcher",
       "kind": "nav",
       "refersTo": "story-switch",
-      "description": "Four quiet text destinations; current state is shown, application behaviour is not reproduced.",
+      "description": "Retained text navigation for Chef, Dogs and Neighbours; hidden in the wine reading state. Preview is static.",
       "html": "<nav class=\"ds-switch\" aria-label=\"More discoveries\"><button aria-current=\"true\">Wine</button><button>Chef</button><button>Dogs</button><button>Neighbours</button></nav>",
       "css": ".ds-switch{display:flex;gap:19px}.ds-switch button{font-family:Manrope,sans-serif;color:var(--ink,#302d2b);background:none;border:0;cursor:pointer;padding:8px 0;font-size:11px;min-height:32px;color:var(--muted,#6c625b);border-bottom:1px solid transparent}.ds-switch button[aria-current]{color:var(--ink,#302d2b);border-color:var(--copper,#916242)}.ds-switch button:hover{background:none}.ds-switch button:focus-visible{outline:2px solid var(--copper,#916242);outline-offset:7px;}"
     },
@@ -203,40 +222,49 @@
       "description": "Pause icon with its implemented target size; visual specimen only.",
       "html": "<button class=\"ds-motion\" aria-label=\"Pause animation\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M8 5v14M16 5v14\"/></svg></button>",
       "css": ".ds-motion{font-family:Manrope,sans-serif;color:var(--ink,#302d2b);background:none;border:0;cursor:pointer;display:grid;place-items:center;width:44px;height:44px;color:var(--muted,#6c625b)}.ds-motion svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.2}.ds-motion:hover{color:var(--ink,#302d2b)}.ds-motion:focus-visible{outline:2px solid var(--copper,#916242);outline-offset:7px;}"
+    },
+    {
+      "name": "Wine reading title",
+      "kind": "custom",
+      "description": "Static settled typography specimen only. The live application moves one persistent word into the measured lunch. destination before handing visibility to the semantic heading.",
+      "html": "<h2 class=\"ds-wine-title\"><span class=\"ds-wine-first\">Not the ladies </span><span class=\"ds-wine-second\"><span>who </span><span>lunch.</span></span></h2>",
+      "css": ".ds-wine-title{font-family:Manrope,sans-serif;color:var(--ink,#302d2b);font-size:clamp(30px,3.4vw,52px);line-height:1.07;letter-spacing:-.04em;font-weight:400;margin:0 0 26px}.ds-wine-first{display:block}.ds-wine-second{display:block;text-align:right;padding-right:6%;font-weight:550}.ds-wine-second{white-space:nowrap}"
     }
   ],
   "narrative": {
-    "northStar": "Light, tension and discovery",
-    "overview": "The implemented invitation uses warm paper, dark sans serif text and a translucent field of light. Four individually authored SVG objects provide the entry points to sourced stories; restrained text controls leave the objects visible as the principal interaction.\n\nThis is the replacement for the rejected serif, rigid bow and wedding concept. The supplied reference contributes conceptual transparency, light and tension only. The current build has not received human creative approval; delight is an intended effect, not an established result.",
+    "northStar": "An optical event, then stillness",
+    "overview": "The invitation preserves V2\u2019s warm paper, dark Manrope typography, essential event information and four sourced narrative identities. The wine entry is now an optical event: a fine line is refracted while one persistent visible word rotates and skews, then travels and scales into its exact heading slot as an asymmetrical reading space opens. The other three SVG anchors move to the edge during this discovery.\n\nThe latest owner brief asks for evolution of the surviving V2, not another redesign. This branch implements one vertical slice. Quietness and consequential interaction replace continuous material decoration. The build is not human-approved, and artistic surprise is an intention requiring review rather than a proven property.",
     "keyCharacteristics": [
-      "Warm paper with copper accents and dark text.",
-      "One locally hosted sans serif family, with weight carrying hierarchy.",
-      "Procedural light behind distinct glass, flame, dog-tag ring and leaf objects.",
-      "Persistent event information with one discovery shown at a time."
+      "Warm paper and restrained dark text, with the established copper interface accent.",
+      "Locally drawn line textures, a persistent DOM word and a shader lens.",
+      "A finite opening followed by stillness; new frames respond to interaction or state changes.",
+      "Wine reading space with displaced typography; three preserved discoveries remain accessible."
     ],
     "rules": [
       {
         "name": "The Legible Ground Rule",
-        "body": "Event text sits on the paper ground; the light field must not become the reading surface for essential information.",
+        "body": "Essential event text stays on the paper ground and remains independent of the optical texture.",
         "section": "colors"
       },
       {
         "name": "The Reading Escape Rule",
-        "body": "A story may scroll internally when its content exceeds the available height. At widths of 300px or less, the whole invitation deliberately reflows into normal document flow and may scroll. These are accessibility escape routes, not failures to preserve the ordinary single-viewport composition.",
+        "body": "Compact and mobile stories may scroll internally. At widths of 300px or less the invitation deliberately reflows and may scroll as a document. These preserve reading access outside the ordinary one-viewport composition.",
         "section": "layout"
       }
     ],
     "dos": [
-      "Do preserve the current owner correction over historical mockup or M1 instructions.",
+      "Do preserve V2\u2019s working content and access while refining the single wine slice.",
       "Do keep essential event information available before JavaScript and animation.",
       "Do retain source links and the boundaries recorded in docs/DISCOVERIES.md.",
-      "Do preserve reduced-motion, fallback, focus restoration and readable overflow routes."
+      "Do preserve reduced-motion, static fallback, focus restoration and readable overflow routes.",
+      "Do keep work on feat/refraction-art-slice and require review before merging into main or expanding the treatment."
     ],
     "donts": [
-      "Don't reintroduce serif type, the rigid decorative bow or the wedding story.",
-      "Don't reproduce the reference composition literally or describe concept art as venue photography.",
-      "Don't turn the object field into a dashboard of cards or pills.",
-      "Don't describe calendar export as RSVP, or local implementation as human approval or all-device certification."
+      "Don't restore floating ribbons or perpetual decorative material loops.",
+      "Don't reintroduce serif type, the rigid bow or the wedding story.",
+      "Don't reproduce the reference literally or describe concept art as venue photography.",
+      "Don't turn discoveries into dashboard cards or disguise calendar export as RSVP.",
+      "Don't equate source extraction, screenshots or browser checks with creative approval or physical iPhone certification."
     ]
   }
 }

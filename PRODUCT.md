@@ -8,16 +8,18 @@ web
 CCGS consultants receiving an invitation on phones and desktop browsers.
 
 ## Purpose
-An invitation to the Annual Autumn Event: Wednesday 4 November 2026, 19:00, No. Fifty Cheyne, 50 Cheyne Walk, Chelsea, London SW3 5LR. Consultant only. Celebrate what we have built together.
+An invitation to the Annual Autumn Event: Wednesday 4 November 2026, 19:00, No. Fifty Cheyne, 50 Cheyne Walk, Chelsea, London SW3 5LR. CONSULTANT ONLY. Celebrating what we've built together.
 
 ## Success
-The visitor immediately understands when and where, wants to attend, wants to explore, and learns surprising, sourced details about the venue and neighbourhood. The first encounter should create a brief moment of wonder.
+Essential event information is immediately accessible. Visitors can enjoy a complete still composition, then discover a consequential spatial transformation and a surprising sourced story. Artistic conviction and surprise require human judgement; the implementation alone does not establish them.
 
 ## Binding direction
-The user explicitly commissioned a replacement of the rejected M1. Minimalism, sophisticated material motion, conceptual objects derived from the flyer, no serif typography. The supplied 20 October mockup is a conceptual reference for light, transparency and tension only; nothing literal should remain. The user has delegated invention and asked to build, not reopen direction selection.
+The latest owner brief preserves V2 as the first iteration worth retaining. It supersedes the earlier replacement mandate: evolve the existing experience, do not restart it. Objects should become events or relationships. Preserve the flyer through warmth, natural light, intimacy and mischievous humour, not literal imagery. No serif, rigid bow, floating translucent ribbons, perpetual decorative motion, dashboard cards or illustrative medical metaphors.
+
+The current scope is one wine-refraction vertical slice on `feat/refraction-art-slice`: a finite optical opening, a refracted line and a persistent visible word that travels into its heading slot, then an expanded reading space. Keep the other three factual discoveries and their working routes. Do not extend this treatment to all four before the first slice is artistically convincing and reviewed.
 
 ## Constraints
-No page scrolling in normal viewports. Touch and keyboard support, reduced motion and non-WebGL fallback. Essential information visible before JavaScript. No invented RSVP endpoint, event menu, attendance, venue photography or factual claims. RSVP destination remains unconfigured. No automatic public deployment.
+One viewport in ordinary use; retain compact internal reading scroll and extreme narrow-width reflow as accessibility escapes. Touch and keyboard access, reduced motion, static non-WebGL fallback and essential information before JavaScript. No invented RSVP endpoint, menu, wine selection, attendance, photography or factual claims. RSVP remains unconfigured. Work on the dedicated branch; no merge into main without review and no automatic public deployment.
 
 ## Evidence
-Four verified concept PNGs in public/references; their manifest records provenance. Restaurant and neighbourhood sources are recorded in docs/DISCOVERIES.md. The approved flyer provides event facts, not current restaurant menu evidence.
+Source extraction records the implemented slice in DESIGN.md and .impeccable/design.json. Browser observations and their limits belong in docs/REFRACTION-REVIEW.md; observed coverage is Safari desktop and Chrome responsive layouts, not physical iPhone testing. Human creative approval and all-device reliability are unverified. Four concept PNGs retain their provenance in public/references. Discovery sources and limits remain in docs/DISCOVERIES.md; the approved flyer supplies event facts, not current restaurant menu evidence.

@@ -1,77 +1,137 @@
 'use client';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { useEffect, useMemo, useRef, type RefObject } from 'react';
+
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { useEffect, useMemo, useRef, useState, type RefObject } from 'react';
 import * as THREE from 'three';
-export type FieldInput = { x: number; y: number; energy: number; colour: number };
-type Props = { input: RefObject<FieldInput>; active: boolean; onReady: () => void; onFailure: () => void };
+import { openingScore } from '@/lib/refraction';
+
+export type FieldInput = { x: number; y: number; energy: number; colour: number; open?: number };
+type Props = {
+  input: RefObject<FieldInput>;
+  active: boolean;
+  onReady: (wake: () => void) => void;
+  onFailure: () => void;
+};
+
 const vertex = `varying vec2 vUv; void main(){vUv=uv;gl_Position=vec4(position.xy,0.,1.);}`;
 const fragment = /* glsl */`
 precision highp float;
 varying vec2 vUv;
-uniform float uTime;
+uniform sampler2D uPrinted;
+uniform sampler2D uHidden;
 uniform float uAspect;
+uniform float uScore;
+uniform float uOpen;
 uniform vec3 uTouch;
-uniform float uColour;
-float curve(float x, float layer, float t){
-  return .50 + .19*sin(x*5.5 + layer*.38 + t*.13) + .17*cos(x*2.9 - layer*.2) - .18*x;
-}
+
 void main(){
-  vec2 uv=vUv;
-  float t=uTime;
-  float unfurl=1.-exp(-max(0.,t-.25)*2.3);
-  vec2 d=uv-uTouch.xy;
-  d.x*=uAspect;
-  float dist=length(d);
-  float touch=exp(-dist*dist*7.)*uTouch.z;
-  float wave=sin(dist*22.-t*3.0)*exp(-dist*4.)*uTouch.z*.018;
-  vec3 colour=vec3(0.);
-  float alpha=0.;
-  for(int i=0;i<3;i++){
-    float l=float(i);
-    float x=uv.x + .012*sin(uv.y*6.+t*.19+l);
-    float centre=curve(x,l,t)+wave+touch*d.y*.25+(1.-unfurl)*sin(x*6.28+l)*.23;
-    float width=.065+.14*pow(sin(x*3.14159),2.);
-    width*=(.3+.7*unfurl)*(1.+.2*sin(x*6.+t*.3+l));
-    float y=(uv.y-centre)/width;
-    float shape=1.-smoothstep(.97,1.01,abs(y));
-    float fold=sin(y*2.6+x*7.-t*.18+l*.4);
-    float rim=exp(-pow((abs(y)-.98)*70.,2.));
-    float inner=pow(max(0.,cos(y*2.1+x*4.+l*.8)),16.);
-    float reflection=pow(max(0.,sin(y*3.2-x*2.7+l*.8)),32.);
-    float band=exp(-pow((y-.42*sin(x*4.+l))*25.,2.));
-    vec3 shade=mix(vec3(.67,.59,.51),vec3(1.,.97,.89),.5+.5*fold);
-    shade=mix(shade,vec3(.77,.47,.21),rim*.7);
-    shade=mix(shade,vec3(1.,.99,.94),reflection*.9+inner*.4);
-    shade=mix(shade,vec3(.56,.27,.27),uColour*.10*shape);
-    float a=shape*(.045+inner*.12+reflection*.28+band*.055)+rim*.60;
-    a*=smoothstep(.02,.17,x)*(1.-smoothstep(.93,1.,x));
-    colour=colour*(1.-a)+shade*a;
-    alpha=alpha+(1.-alpha)*a;
-  }
-  // Moving caustics are generated from the material, with local touch interference.
-  float line=curve(uv.x,1.,t)-.23+wave*.6;
-  float caustic=exp(-pow((uv.y-line)*130.,2.))*.17;
-  caustic*=sin(uv.x*3.14159);
-  colour+=vec3(.83,.66,.43)*caustic;
-  alpha+=caustic*(1.-alpha);
-  gl_FragColor=vec4(colour/max(alpha,.001),alpha);
+  vec2 uv = vUv;
+  vec2 centre = mix(vec2(.40,.55),vec2(.48,.50),uOpen);
+  vec2 radius = mix(vec2(.21,.21*uAspect),vec2(.49,.46),uOpen);
+  vec2 local = (uv-centre)/radius;
+  float distance = length(local);
+  float inside = 1.-smoothstep(.98,1.,distance);
+  float lens = max(0.,1.-distance*distance);
+  float intention = uTouch.z;
+  float twist = (uScore*.95+intention*1.5)*(1.-uOpen);
+  float angle = lens*twist;
+  mat2 rotate = mat2(cos(angle),-sin(angle),sin(angle),cos(angle));
+  vec2 optical = rotate*local;
+  optical *= 1.-lens*(.36+intention*.18);
+  optical.x += (uTouch.x-centre.x)*lens*.42*intention;
+  optical.y += (uTouch.y-centre.y)*lens*.35*intention;
+  vec2 refracted = centre+optical*radius;
+  vec4 ordinary = texture2D(uPrinted,uv);
+  vec4 through = texture2D(uHidden,refracted);
+  float reveal = inside*(.88+intention*.12)*(1.-uOpen);
+  vec4 result = mix(ordinary,through,reveal);
+  result.a *= 1.-uOpen;
+  // The circumference is an optical discontinuity, not a shaded solid object.
+  float edge = exp(-pow((distance-1.)*220.,2.));
+  float crescent = edge*(.20+.20*max(0.,local.x-local.y));
+  vec3 ink = vec3(.31,.26,.25);
+  float arc = crescent*(1.-uOpen*.68);
+  result.rgb = mix(result.rgb,ink,arc);
+  result.a = max(result.a,arc);
+  // A second image exists only within the lens: the line has impossible continuity.
+  float echo = texture2D(uPrinted,centre+(optical*vec2(-1.,.68))*radius).a;
+  float echoAlpha = echo*inside*(.2+.4*intention)*(1.-uOpen);
+  result.rgb = mix(result.rgb,vec3(.38,.18,.23),echoAlpha);
+  result.a = max(result.a,echoAlpha);
+  gl_FragColor=result;
 }`;
-function Material({ input, onReady }: Props) {
+
+function OpticalField({ input, active, onReady }: Props) {
+  const invalidate = useThree(state => state.invalidate);
+  const [textures, setTextures] = useState<THREE.CanvasTexture[] | null>(null);
   const elapsed = useRef(0);
-  const uniforms = useMemo(() => ({ uTime:{value:0},uAspect:{value:1},uTouch:{value:new THREE.Vector3(.5,.5,0)},uColour:{value:0} }), []);
-  useEffect(onReady,[onReady]);
-  useFrame((state,delta)=>{
-    const dt=Math.min(delta,.05); elapsed.current+=dt;
-    uniforms.uTime.value=elapsed.current;
-    uniforms.uAspect.value=state.size.width/state.size.height;
-    const k=1-Math.exp(-dt*5);
-    uniforms.uTouch.value.lerp(new THREE.Vector3(input.current.x,1-input.current.y,input.current.energy),k);
-    uniforms.uColour.value=THREE.MathUtils.lerp(uniforms.uColour.value,input.current.colour,k);
+  const material = useRef<THREE.ShaderMaterial>(null);
+  const currentTouch = useRef(new THREE.Vector3(.4,.55,0));
+  const targetTouch = useRef(new THREE.Vector3());
+  const uniforms = useMemo(() => ({
+    uPrinted: { value: textures?.[0] ?? null },
+    uHidden: { value: textures?.[0] ?? null },
+    uAspect: { value: 1.4 }, uScore: { value: 0 }, uOpen: { value: 0 },
+    uTouch: { value: currentTouch.current },
+  }), [textures]);
+
+  useEffect(() => {
+    let cancelled = false;
+    let created: THREE.CanvasTexture[] = [];
+    // A locally authored typographic plate. No screenshots or remote images.
+    const draw = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1800; canvas.height = 1200;
+      const ctx = canvas.getContext('2d')!;
+      ctx.clearRect(0,0,1800,1200);
+      ctx.strokeStyle = '#74675e'; ctx.lineWidth = 1.25;
+      ctx.beginPath(); ctx.moveTo(65,540); ctx.lineTo(1725,540); ctx.stroke();
+      ctx.strokeStyle = '#c0b5aa'; ctx.lineWidth = .8;
+      ctx.beginPath(); ctx.moveTo(65,548); ctx.lineTo(1725,548); ctx.stroke();
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.minFilter = THREE.LinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      return texture;
+    };
+    document.fonts.load('450 148px Manrope').catch(() => []).then(() => {
+      if(cancelled)return;
+      created = [draw()]; setTextures(created); invalidate();
+    });
+    return () => { cancelled=true; created.forEach(texture=>texture.dispose()); };
+  },[invalidate]);
+
+  useEffect(() => {
+    if (!textures) return;
+    onReady(invalidate); invalidate();
+  },[textures,uniforms,onReady,invalidate]);
+  useEffect(() => { if(active)invalidate(); },[active,invalidate]);
+
+  useFrame((state,delta) => {
+    if(!active||!textures||!material.current)return;
+    const live=material.current.uniforms;
+    const dt=Math.min(delta,.05);
+    elapsed.current=Math.min(3,elapsed.current+dt);
+    live.uScore.value=openingScore(elapsed.current);
+    live.uAspect.value=state.size.width/state.size.height;
+    targetTouch.current.set(input.current.x,1-input.current.y,input.current.energy);
+    currentTouch.current.lerp(targetTouch.current,1-Math.exp(-dt*8));
+    const targetOpen=input.current.open??0;
+    live.uTouch.value.copy(currentTouch.current);
+    live.uOpen.value=THREE.MathUtils.damp(live.uOpen.value,targetOpen,5,dt);
+    if(elapsed.current<3 || currentTouch.current.distanceTo(targetTouch.current)>.0001 || Math.abs(live.uOpen.value-targetOpen)>.0001)invalidate();
   });
-  return <mesh frustumCulled={false}><planeGeometry args={[2,2]} /><shaderMaterial transparent depthWrite={false} vertexShader={vertex} fragmentShader={fragment} uniforms={uniforms} /></mesh>;
+  if(!textures)return null;
+  return <mesh frustumCulled={false}><planeGeometry args={[2,2]}/><shaderMaterial ref={material} transparent depthWrite={false} uniforms={uniforms} vertexShader={vertex} fragmentShader={fragment}/></mesh>;
 }
-export default function MembraneScene(props: Props){
+
+export default function MembraneScene(props:Props){
   const cleanup=useRef<(()=>void)|null>(null);
   useEffect(()=>()=>cleanup.current?.(),[]);
-  return <Canvas aria-hidden="true" dpr={[1,1.5]} gl={{alpha:true,antialias:false,powerPreference:'low-power'}} frameloop={props.active?'always':'never'} onCreated={({gl})=>{gl.setClearColor(0,0); const canvas=gl.domElement; const lost=(e:Event)=>{e.preventDefault();props.onFailure();}; canvas.addEventListener('webglcontextlost',lost);cleanup.current=()=>canvas.removeEventListener('webglcontextlost',lost);}} fallback={null}><Material {...props}/></Canvas>;
+  return <Canvas aria-hidden="true" dpr={[1,1.5]} frameloop="demand" gl={{alpha:true,antialias:true,powerPreference:'low-power'}} onCreated={({gl})=>{
+    gl.setClearColor(0,0);
+    const canvas=gl.domElement;
+    const lost=(event:Event)=>{event.preventDefault();props.onFailure();};
+    canvas.addEventListener('webglcontextlost',lost);
+    cleanup.current=()=>canvas.removeEventListener('webglcontextlost',lost);
+  }} fallback={null}><OpticalField {...props}/></Canvas>;
 }
