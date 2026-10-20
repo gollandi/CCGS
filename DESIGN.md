@@ -61,19 +61,19 @@ components:
 
 # Design System: CCGS Annual Autumn Event
 
-## Current direction — line refraction
+## Current direction — a single transparent fold
 
-The owner rejected the large circle and exposed “lunch.” on 20 October 2026. This revision preserves the invitation and reduces only the wine event. `docs/REFRACTION-REVIEW.md` is historical; `docs/LINE-REVIEW.md` records the new verification.
+The owner found the broken ray too literal and reintroduced the supplied image as a material reference, asking for a more minimal version and reiterating “non serif”. This revision restores one transparent folded surface. The image supplies translucency, light and tension only. Manrope remains the sole active family. Earlier line and refraction review files are historical; see `docs/FOLD-REVIEW.md`.
 
 Warm paper, Manrope, event details, three other discoveries, sources, RSVP explanation and calendar export remain. This is refinement of the surviving V2, not a new visual world. The printed flyer is atmospheric ancestry only. No serif type.
 
 ## Artwork and interaction
 
-The idle wine field contains one hairline with a small local discontinuity. No circle, lens perimeter, exposed word, backdrop gradient or material surface. The shader computes the line analytically in screen pixels; there are no image textures or font-loading dependencies. Two adjacent portions disagree about the ray's height. Engagement increases that offset and briefly exposes a short counter-image. The effect is confined to the ray, not arbitrary document content.
+The idle wine field contains one broad transparent face with a fine perimeter, an internal crease and restrained reflected light. It extends beyond its artwork frame rather than closing into a leaf or circle. A custom shader computes its upper/lower edges, fold, shading and highlights analytically. It contains no photograph or image texture. Pointer intention changes the fold locally, with different deformation amplitudes for its edges, rather than translating the entire object as a rigid unit. Opening the story fades the surface to keep the reading ground clear.
 
 The finite opening score anticipates for 0.5 seconds, peaks at 1.5 seconds and settles by 3 active renderer seconds. This is not a certified wall-clock startup budget. On-demand rendering ceases after convergence. New interaction wakes the scene. Pause can remount and replay the shader score.
 
-A first tap/click or keyboard activation reveals a small “Not” at the fracture while keeping the story closed. A screen-reader status announces the second activation. Hover can preview the word; deliberate pulls retain the existing reveal threshold. A second activation carries “Not” into the exact first-word slot of the heading. At rest, the semantic heading takes over so text scrolling behaves normally. Escape cancels the first-contact state or closes the story and restores focus. The first-contact state resets when a different discovery opens.
+A first tap/click or keyboard activation reveals a small “Not” at the fold while keeping the story closed. A screen-reader status announces the second activation. Hover can preview the word; deliberate pulls retain the existing reveal threshold. A second activation carries “Not” into the exact first-word slot of the heading. At rest, the semantic heading takes over so text scrolling behaves normally. Escape cancels the first-contact state or closes the story and restores focus. The first-contact state resets when a different discovery opens.
 
 The travelling word is 24px on desktop and 22px on mobile, regular weight, and invisible at idle. It is decorative/aria-hidden; the semantic heading retains its complete accessible name. Its journey lasts 1.1 seconds with authored acceleration and deceleration. It has no independent idle choreography. Reduced motion places it immediately. Resize recalculates its destination.
 
@@ -85,10 +85,10 @@ The other story routes retain their prior typography and navigation. Only the wi
 
 ## Layout, control and fallbacks
 
-Essential information remains independent of the artwork in one ordinary viewport. The central wine target is a transparent rectangular button, at least 100px tall, over the fracture. Its redundant visible instruction is removed; its accessible name remains. The remaining three anchors stay at the edge during wine reading. No new modal, card or navigation menu is introduced.
+Essential information remains independent of the artwork in one ordinary viewport. The central wine target is a transparent rectangular button, at least 100px tall, over the fold. Its redundant visible instruction is removed; its accessible name remains. The remaining three anchors stay at the edge during wine reading. No new modal, card or navigation menu is introduced.
 
 Small reading regions scroll internally. At extreme widths the inherited accessibility reflow permits document scrolling. These are deliberate reading escapes, not a universal no-scroll claim.
 
-Reduced motion, pause or renderer failure keeps an SVG broken line. The fallback is hidden during wine reading. No duplicate word appears in the fallback. GSAP context cleanup restores content when interrupted. The 44px pause control and keyboard routes remain. Server-rendered facts and the no-script story disclosures remain available.
+Reduced motion, pause or renderer failure keeps an SVG folded-surface approximation. The fallback is hidden during wine reading. No duplicate word appears in the fallback. GSAP context cleanup restores content when interrupted. The 44px pause control and keyboard routes remain. Server-rendered facts and the no-script story disclosures remain available.
 
 Calendar export is not RSVP. The RSVP disclosure accurately states that no response is collected. Original assets and source provenance remain untouched. Local browser testing is not physical iPhone certification or creative approval.

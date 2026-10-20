@@ -40,3 +40,7 @@
 @media(max-width:760px){.optical-word{font-size:22px}.object-position-0{left:36.4%;top:45%;width:68%;height:100px}.wine-story h2{font-size:28px}.wine-line-two{padding-left:14%}}
 @media(max-width:360px){.wine-story h2{font-size:24px}}
 @media(max-height:500px) and (min-width:761px){.wine-story h2{font-size:26px}}
+
+/* A single transparent fold, following the owner's renewed material reference. */
+.object-position-0{left:43%;top:49%;width:76%;height:72%;min-height:200px}.wine-open .light-field{opacity:.45}
+@media(max-width:760px){.object-position-0{left:43%;top:49%;width:82%;height:76%;min-height:180px}}

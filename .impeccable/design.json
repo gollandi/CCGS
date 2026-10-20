@@ -233,12 +233,12 @@
   ],
   "narrative": {
     "northStar": "An optical event, then stillness",
-    "overview": "The owner rejected the large circle and exposed lunch. The wine field is now an analytic hairline discontinuity. First activation reveals a small Not; second activation moves it into the sentence. No visible lens or idle word remains. The invitation and three other discoveries are preserved. See DESIGN.md and docs/LINE-REVIEW.md for current source truth and verification.",
+    "overview": "A single transparent folded surface replaces the rejected broken ray. The supplied reference contributes light, translucency and tension only. Manrope, sans-serif is the sole active type family. One wine slice remains under review; other discoveries and all sourced facts remain. See DESIGN.md and docs/FOLD-REVIEW.md.",
     "keyCharacteristics": [
-      "Warm paper and restrained dark text, with the established copper interface accent.",
-      "An analytic broken ray with no lens outline or idle word.",
-      "A finite opening followed by stillness; new frames respond to interaction or state changes.",
-      "Wine reading space with displaced typography; three preserved discoveries remain accessible."
+      "Warm paper and dark Manrope sans serif type.",
+      "One transparent face with a locally responsive crease and restrained highlights.",
+      "Finite opening, demand rendering, static folded-surface fallback.",
+      "Persistent event information and existing sourced discoveries."
     ],
     "rules": [
       {

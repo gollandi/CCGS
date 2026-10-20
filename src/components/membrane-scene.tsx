@@ -21,26 +21,42 @@ uniform vec2 uSize;
 uniform float uScore;
 uniform float uOpen;
 uniform vec3 uTouch;
+void lay(inout vec4 surface,vec3 colour,float opacity){
+  float a=clamp(opacity,0.,1.);
+  float combined=a+surface.a*(1.-a);
+  surface.rgb=(colour*a+surface.rgb*surface.a*(1.-a))/max(combined,.00001);
+  surface.a=combined;
+}
 void main(){
-  vec2 pixel=vUv*uSize;
-  float intention=uTouch.z;
-  float cut=(.40+clamp(uTouch.x-.40,-.3,.3)*intention*.16)*uSize.x;
-  float reach=clamp(uSize.x*.10,34.,100.);
-  float q=(pixel.x-cut)/reach;
-  float influence=exp(-pow(abs(q)*1.3,4.));
-  float displacement=(uScore*14.+intention*36.)*(1.-uOpen);
-  // The two halves disagree about where the same ray continues.
-  float side=mix(-1.,1.,step(0.,q));
-  float ray=uSize.y*.55+side*displacement*influence;
-  float distance=abs(pixel.y-ray);
-  float hairline=1.-smoothstep(.35,1.05,distance);
-  float seam=smoothstep(.7,1.8,abs(pixel.x-cut));
-  float ends=smoothstep(.045,.065,vUv.x)*(1.-smoothstep(.92,.95,vUv.x));
-  float ink=hairline*mix(1.,seam,min(1.,displacement/3.))*ends;
-  // Refraction produces a short counter-image only while the visitor engages.
-  float counter=1.-smoothstep(.25,.85,abs(pixel.y-(uSize.y*.55-side*displacement*influence*.65)));
-  float echo=counter*influence*seam*intention*.24;
-  gl_FragColor=vec4(vec3(.36,.30,.28),max(ink*.62,echo)*(1.-uOpen));
+  vec2 p=vec2(vUv.x,1.-vUv.y);
+  float x=clamp((p.x-.035)/.94,0.,1.);
+  float arch=sin(x*3.14159265);
+  float local=exp(-pow((p.x-uTouch.x)*3.8,2.));
+  float tension=(uScore-.35)*.075+uTouch.z*.10*local;
+  float bend=arch*(tension+uTouch.z*(.5-uTouch.y)*.10*local);
+  float spine=-.13+1.17*x;
+  float upper=spine-.15*arch-bend*.30;
+  float lower=spine+.40*arch+bend*.65;
+  float fold=spine+.075*arch+bend;
+  float px=1./uSize.y;
+  float ends=smoothstep(0.,.025,x)*(1.-smoothstep(.975,1.,x));
+  float inside=smoothstep(upper-px,upper+px,p.y)*(1.-smoothstep(lower-px,lower+px,p.y))*ends;
+  float across=(p.y-upper)/max(lower-upper,.001);
+  float crease=abs(p.y-fold);
+  vec4 surface=vec4(0.);
+  // One broad transparent face. Its fold and perimeter catch the light differently.
+  lay(surface,vec3(.51,.46,.41),exp(-pow((p.y-lower-.045)/.045,2.))*arch*.045*ends);
+  lay(surface,vec3(.99,.975,.94),inside*(.09+.10*pow(1.-clamp(across,0.,1.),3.)));
+  lay(surface,vec3(.53,.49,.45),inside*exp(-pow((p.y-fold-.025)/.052,2.))*.16);
+  lay(surface,vec3(1.,.985,.945),inside*exp(-pow((p.y-fold+.015)/.027,2.))*.48);
+  lay(surface,vec3(1.,.99,.96),exp(-pow(crease/(px*1.25),2.))*ends*.86);
+  lay(surface,vec3(.57,.40,.27),exp(-pow((p.y-upper)/(px*.85),2.))*ends*.43);
+  lay(surface,vec3(1.,.99,.96),exp(-pow((p.y-upper-px*1.5)/(px*.8),2.))*ends*.85);
+  lay(surface,vec3(.65,.52,.40),exp(-pow((p.y-lower)/(px*.7),2.))*ends*.25);
+  lay(surface,vec3(1.,.99,.96),exp(-pow((p.y-lower+px*1.6)/(px*1.1),2.))*ends*.9);
+  // Opening releases the material into the margin, keeping the reading ground clear.
+  surface.a*=(1.-uOpen*.94)*smoothstep(-.02,.025,p.y)*(1.-smoothstep(.94,1.04,p.y));
+  gl_FragColor=surface;
 }`;
 
 function OpticalField({ input, active, onReady }: Props) {
