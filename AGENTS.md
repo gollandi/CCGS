@@ -19,4 +19,4 @@
 
 ## Current repository state
 
-The repository contains the brief and four verified reference images. Application scaffolding, runtime dependencies, build commands and tests have not yet been established. Do not report an application build or live deployment based on this handoff alone.
+The repository contains the brief, four verified reference images and a Next.js/React/TypeScript foundation with the graphics stack installed. Read `docs/GRAPHICS-STACK.md` for package responsibilities and commands. Use pnpm and preserve its lockfile. M1 now includes a custom WebGL membrane, a semantic event layout, one sourced discovery, gesture and keyboard controls, and static artwork. Read `docs/M1-REVIEW.md` for validation and remaining limits. M1 awaits creative approval before M2; a local preview is not a public deployment or an actual iPhone Safari test.
