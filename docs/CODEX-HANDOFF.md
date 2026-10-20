@@ -7,3 +7,9 @@ Read docs/CREATIVE-DIRECTION.md. Preserve approved flyer family. Single viewport
 M1: perfect first viewport, one discovery, static fallback and tests. Seek approval before M2. M2: 3–5 sourced discoveries. M3: polish and browser QA.
 
 RSVP destination is unknown: never simulate submission. Concept art is not real venue photography.
+
+## Reference assets transferred — 20 October 2026
+
+Read [the reference index](../public/references/README.md) and [manifest](../public/references/manifest.json) alongside the creative direction. All four reference PNGs are present as individual files. Use `approved-flyer.png` for the visual family and `subtractive-direction.png` for the evolved composition; refine its contrast and hierarchy. `spatial-exploration.png` and `warm-hero-ancestor.png` are historical references with superseded elements, not alternative approved specifications. Their usage limits are explicit in the manifest.
+
+The existing concept, event content and milestone approval boundary remain unchanged. No application, live RSVP or deployment is delivered by this asset transfer.

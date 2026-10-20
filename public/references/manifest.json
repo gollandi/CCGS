@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "project": "CCGS Annual Autumn Event 2026",
+  "verified_on": "2026-10-20",
+  "source_documents_commit": "d410314c1d774902962aa1429ab8aa204c95e0f6",
+  "source_archive_sha256": "b50c8097741548b9e59e969be02bb660f8a9d91653c4cce9584ef85e6753671c",
+  "scope": "The four visual references in the existing handoff archive. This is not an exhaustive export of the conversation, its research images or intermediate prototypes.",
+  "assets": [
+    {
+      "id": "approved-flyer",
+      "path": "public/references/approved-flyer.png",
+      "title": "Approved invitation flyer",
+      "description": "The final portrait flyer, with Annual Autumn Event, CONSULTANT ONLY, RSVP and the approved celebration footer. Preserve its warmth and visual family.",
+      "media_type": "image/png",
+      "bytes": 2102947,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "2163f0e0378b43b2132352379eeb7c63cb0144b71210b960c52d9dfe16905d9b",
+      "availability": "present",
+      "design_status": "approved_visual_ancestor",
+      "source": {
+        "conversation_url": "https://chatgpt.com/c/6ad76812-049c-83eb-b0e1-512875cef97f",
+        "conversation_title": "Ristoranti Chelsea Confronto",
+        "chatgpt_file_id": "file_000000007f308243b0de4d7f096e8a69",
+        "recovery": "Existing local handoff archive; independently retrieved from the rendered source conversation and matched byte for byte.",
+        "archive_filename": "ccgs-codex-handoff.zip",
+        "archive_member": "ccgs-handoff/public/references/approved-flyer.png"
+      },
+      "approval_evidence": {
+        "basis": "Observed user messages in the source conversation, consistent with the existing creative-direction document.",
+        "summary": "The user requested removal of guest-count copy in favour of RSVP, then explicitly approved this flyer before requesting the digital experience."
+      },
+      "usage_limits": "Approved visual ancestor; not verified venue photography or a substitute for semantic event text.",
+      "verification": {
+        "date": "2026-10-20",
+        "conversation_byte_match": true,
+        "visually_inspected": true
+      }
+    },
+    {
+      "id": "subtractive-direction",
+      "path": "public/references/subtractive-direction.png",
+      "title": "Subtractive digital direction",
+      "description": "Latest landscape concept: one translucent membrane refracting the warm Chelsea scene, with a much quieter composition.",
+      "media_type": "image/png",
+      "bytes": 1687133,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4d55ddc9edc36d14521890f3bc37b9b8326b00eae0256f28dff8e8bf0fd3896e",
+      "availability": "present",
+      "design_status": "approved_concept_requires_refinement",
+      "source": {
+        "conversation_url": "https://chatgpt.com/c/6ad76812-049c-83eb-b0e1-512875cef97f",
+        "conversation_title": "Ristoranti Chelsea Confronto",
+        "chatgpt_file_id": "file_0000000071e082439c2b25fbc71aa01a",
+        "recovery": "Existing local handoff archive; independently retrieved from the rendered source conversation and matched byte for byte.",
+        "archive_filename": "ccgs-codex-handoff.zip",
+        "archive_member": "ccgs-handoff/public/references/subtractive-direction.png"
+      },
+      "approval_evidence": {
+        "basis": "Observed user messages in the source conversation, consistent with the existing creative-direction document.",
+        "summary": "The user accepted the concept while requiring further work on visibility and contrast."
+      },
+      "usage_limits": "Compositional direction only. Improve contrast, hierarchy and legibility; keep required event details and CONSULTANT ONLY even where the mockup omits them. Do not transcribe incidental mockup labels as approved copy.",
+      "verification": {
+        "date": "2026-10-20",
+        "conversation_byte_match": true,
+        "visually_inspected": true
+      }
+    },
+    {
+      "id": "spatial-exploration",
+      "path": "public/references/spatial-exploration.png",
+      "title": "Earlier spatial exploration",
+      "description": "Earlier, busier landscape membrane composition with several circular discoveries.",
+      "media_type": "image/png",
+      "bytes": 1792097,
+      "width": 1536,
+      "height": 1024,
+      "sha256": "8c53ce044bcf53ba0c84001d8a796c379a072dbbbe4e6acfd736824af3a2316f",
+      "availability": "present",
+      "design_status": "superseded_exploration",
+      "source": {
+        "conversation_url": "https://chatgpt.com/c/6ad76812-049c-83eb-b0e1-512875cef97f",
+        "conversation_title": "Ristoranti Chelsea Confronto",
+        "chatgpt_file_id": "file_000000005fc0820d88f52ff2d3af34af",
+        "recovery": "Existing local handoff archive; independently retrieved from the rendered source conversation and matched byte for byte.",
+        "archive_filename": "ccgs-codex-handoff.zip",
+        "archive_member": "ccgs-handoff/public/references/spatial-exploration.png"
+      },
+      "approval_evidence": {
+        "basis": "Observed user messages in the source conversation, consistent with the existing creative-direction document.",
+        "summary": "The user found it promising but too crowded and requested radical subtraction and stronger hierarchy; the next concept superseded it."
+      },
+      "usage_limits": "Historical process reference only. Do not reproduce circular card clutter, unverified menu imagery or incidental labels.",
+      "verification": {
+        "date": "2026-10-20",
+        "conversation_byte_match": true,
+        "visually_inspected": true
+      }
+    },
+    {
+      "id": "warm-hero-ancestor",
+      "path": "public/references/warm-hero-ancestor.png",
+      "title": "Warm visual ancestor",
+      "description": "Earlier portrait concept establishing the warm ivory, autumn foliage and sociable dinner atmosphere.",
+      "media_type": "image/png",
+      "bytes": 2251892,
+      "width": 1024,
+      "height": 1536,
+      "sha256": "271b533b099daa2c4d4f87aeb4c017d9b7c7f501d52cf4ef0c1dab940c80b55e",
+      "availability": "present",
+      "design_status": "superseded_copy_visual_reference_only",
+      "source": {
+        "conversation_url": "https://chatgpt.com/c/6ad76812-049c-83eb-b0e1-512875cef97f",
+        "conversation_title": "Ristoranti Chelsea Confronto",
+        "chatgpt_file_id": "file_00000000dbbc81f799d6d342cf78816c",
+        "recovery": "Existing local handoff archive; independently retrieved from the rendered source conversation and matched byte for byte.",
+        "archive_filename": "ccgs-codex-handoff.zip",
+        "archive_member": "ccgs-handoff/public/references/warm-hero-ancestor.png"
+      },
+      "approval_evidence": {
+        "basis": "Observed user messages in the source conversation, consistent with the existing creative-direction document.",
+        "summary": "The user liked the graphics but rejected the family headline as a concept mistaken for copy; subsequent iterations replaced the title, guest count and footer."
+      },
+      "usage_limits": "Palette and atmosphere only. The family headline, Annual Dinner wording, guest count and three-part footer are superseded and must not appear in the implementation.",
+      "verification": {
+        "date": "2026-10-20",
+        "conversation_byte_match": true,
+        "visually_inspected": true
+      }
+    }
+  ],
+  "unavailable_in_scope": [],
+  "excluded_material": [
+    {
+      "material": "Rejected atom HTML prototype",
+      "reason": "Present in the source archive, but deliberately excluded from the implementation repository transfer to avoid reviving a rejected direction; the creative-direction document records its rejection."
+    },
+    {
+      "material": "Other intermediate flyers and third-party restaurant research images",
+      "reason": "Outside the four-reference handoff set; not presented as approved implementation assets or verified venue photography."
+    }
+  ],
+  "remaining_project_dependencies": [
+    {
+      "item": "RSVP destination",
+      "status": "unconfigured",
+      "instruction": "Do not simulate a successful submission."
+    },
+    {
+      "item": "Discovery facts and any real venue photography",
+      "status": "requires_independent_verification",
+      "instruction": "Follow docs/CONTENT.md before publication; concept artwork is not factual photography."
+    },
+    {
+      "item": "M1 creative approval",
+      "status": "required_after_implementation",
+      "instruction": "Follow docs/CODEX-HANDOFF.md before proceeding to M2."
+    }
+  ]
+}
