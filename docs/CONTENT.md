@@ -6,8 +6,10 @@ The supporting invitation line is “An evening for what comes next.” Calendar
 
 RSVP: please reply in the Consultants WhatsApp chat. The owner confirmed this route on 21 October 2026; no link, form or automated message is required. No guest count. No patient stories as decoration.
 
-## Current discoveries
+## Information hierarchy
 
-Four sourced discoveries cover the current executive chef and a seasonal menu detail, a surprising wine name, Chelsea Dog Day and the restaurant’s welcome to dogs, and Rossetti’s unusual neighbours at number 16. See `DISCOVERIES.md` for URLs, checked date, evidence and limits. Runtime copy lives in `src/lib/discovery.ts`.
+Direct access: executive chef Steven Connolly and cooking philosophy; restaurant overview and characteristics; location, map and walking/public transport directions; current menu at https://fiftycheyne.com/menus/.
 
-The former wedding-licence story was rejected by the owner and removed from the live experience. The previous M1 review is historical evidence, not approval for that implementation.
+Curiosities: exactly catalogue entries 10, 14, 6, 1, 13 and 33, as selected by the owner on 21 October 2026. The flame pairs happy kitchen and open grill; the leaf pairs seasonal pie and the 2019 menu; the membrane opens wine; the collar opens the dog welcome. Historical dishes are labelled 2019 and are not advertised as today's menu. The Dog Day photograph retains its accurate contextual credit without introducing an unselected Dog Day story.
+
+Runtime copy and route groups live in `src/lib/discovery.ts`. Source evidence and limits remain in `DISCOVERIES.md` and `CURIOSITY-CATALOGUE.md`. The former Rossetti and chef-origin narratives remain research material, outside the selected interface. No wedding discovery returns.

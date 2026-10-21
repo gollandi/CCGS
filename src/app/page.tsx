@@ -1,5 +1,5 @@
 import Experience from '@/components/experience';
-import { discoveries } from '@/lib/discovery';
+import { stories, currentMenuUrl } from '@/lib/discovery';
 
 export default function Invitation() {
   return <main className="invitation">
@@ -17,6 +17,6 @@ export default function Invitation() {
       <div className="invitation-actions"><a href="/ccgs-autumn-2026.ics" download className="calendar-link">Keep the evening<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></a><p className="rsvp-note"><strong>RSVP</strong><span>Please reply in the<br/>Consultants WhatsApp chat.</span></p></div>
     </section>
     <footer>Celebrating what we&apos;ve built together.</footer>
-    <noscript><div className="no-script-stories">{discoveries.map(story => <details key={story.id}><summary>{story.title}</summary><p>{story.body}</p><p>{story.aside}</p>{story.sources.map(source => <a key={source.url} href={source.url}>{source.label}</a>)}</details>)}</div></noscript>
+    <noscript><div className="no-script-stories"><a href={currentMenuUrl}>Current menu</a>{stories.map(story => <details key={story.id}><summary>{story.title}</summary><p>{story.body}</p><p>{story.aside}</p>{story.sources.map(source => <a key={source.url} href={source.url}>{source.label}</a>)}</details>)}</div></noscript>
   </main>;
 }

@@ -93,3 +93,41 @@
   .membrane-hint{left:25px;top:4%;bottom:auto}
 }
 @media(max-width:360px){.membrane-hint{left:20px;top:0}}
+
+/* Direct practical information; the objects remain the discovery layer. */
+.practical-nav{position:absolute;top:0;left:8%;right:12%;z-index:7;display:flex;align-items:center;gap:25px;flex-wrap:wrap}
+.practical-nav button,.practical-nav a{display:inline-flex;align-items:center;gap:5px;min-height:44px;padding:0;font-size:12px;color:var(--ink);border-bottom:1px solid transparent}
+.practical-nav button[aria-expanded=true]{border-bottom-color:var(--copper)}
+.practical-nav a:hover,.practical-nav button:hover{color:var(--copper)}
+.experience .story{top:62px;max-height:calc(100% - 62px);right:8%}
+.membrane-hint{top:57px;left:8%}
+.story-switcher{gap:22px;flex-wrap:wrap;margin-top:22px}
+.story-switcher button{min-height:44px}
+.has-story .motion-control{right:8px;top:0}
+@media(max-width:760px){
+ .practical-nav{left:25px;right:25px;gap:0;justify-content:space-between;flex-wrap:nowrap;top:-20px}
+ .practical-nav button,.practical-nav a{font-size:11px;min-height:44px}
+ .membrane-hint{left:25px;top:32px;font-size:9px}
+ .experience .story{top:40px;left:25px;right:25px;max-height:calc(100% - 40px);bottom:0}
+ .has-story .motion-control{top:-50px;right:19px}
+ .story[data-story-kind=practical] .story-photo img{height:120px}
+}
+@media(max-width:360px){
+ .practical-nav{left:20px;right:20px;gap:8px}.practical-nav button,.practical-nav a{font-size:10px}
+ .membrane-hint{left:20px;top:30px}.experience .story{left:20px;right:20px}
+}
+@media(max-width:300px){.practical-nav{left:0;right:0;flex-wrap:wrap;justify-content:flex-start;gap:12px}.experience .story{top:90px;left:0;right:0;max-height:calc(100% - 90px)}.membrane-hint{top:85px}}
+@media(max-height:500px) and (min-width:761px){.practical-nav{gap:20px}.practical-nav button,.practical-nav a{font-size:11px}.experience .story{top:48px;max-height:calc(100% - 48px)}.membrane-hint{top:48px}}
+.practical-nav button,.practical-nav a{white-space:nowrap}
+.practical-nav a svg{width:12px;height:12px;flex-shrink:0}
+@media(max-width:760px){
+ .story[data-story-kind=practical]{display:flex;flex-direction:column}
+ .story[data-story-kind=practical]>*{flex-shrink:0}
+ .story[data-story-kind=practical] .back-button{order:0}
+ .story[data-story-kind=practical] h2{order:1}
+ .story[data-story-kind=practical] .story-body{order:2}
+ .story[data-story-kind=practical] .story-sources{order:3;margin-bottom:16px}
+ .story[data-story-kind=practical] .story-photo{order:4}
+ .story[data-story-kind=practical] .story-aside{order:5}
+}
+@media(max-width:760px) and (max-height:750px){.experience.has-story .practical-nav{top:-5px}.experience.has-story .story{top:50px;max-height:calc(100% - 50px)}}

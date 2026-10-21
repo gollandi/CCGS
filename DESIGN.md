@@ -82,3 +82,11 @@ Each story includes a locally stored, credited image: dining room, Steven Connol
 ### Evidence
 
 See docs/MEMBRANE-REVIEW.md. The owner approved the membrane effect, not every subsequent layout choice. Chrome responsive tests and emulated touch are not physical iPhone testing. Earlier fold and broken-line documents are historical records. Photo provenance and hashes are in public/images/chelsea/manifest.json; the complete research selection bank is docs/CURIOSITY-CATALOGUE.md.
+
+## Two information layers — owner update, 21 October 2026
+
+A quiet direct-navigation row now supplies The chef, The restaurant, Getting there and Current menu. These are ordinary explicit controls, separate from the artistic discovery objects. The menu points to the official `/menus/` page, not a dated PDF. Getting there has the contextual map and Google Maps links for the exact venue address, walking and public transport. No origin, location permission or journey duration is inferred.
+
+The six curiosity records carry their catalogue IDs in data, not visible numbering: 1 (wine), 10 (happy kitchen), 14 (open grill), 6 (seasonal pie), 13 (dog welcome), 33 (2019 food review). Four object portals remain; flame and leaf each have two related readings. Opening a story clears the objects from the reading area. Practical navigation remains available. Closing restores focus to the originating practical control or object, including second readings.
+
+On mobile, practical text and route/source links precede the image; discovery photography retains its editorial position. The approved shader, fallback and photograph treatment are unchanged in this update. Labels and hit areas fit 320px; internal scrolling preserves the dinner facts below. See docs/INFORMATION-LAYERS-REVIEW.md.

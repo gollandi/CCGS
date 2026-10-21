@@ -1,6 +1,6 @@
 # No. Fifty Cheyne — curiosity catalogue
 
-Research inventory, 21 October 2026. This is the complete candidate list extracted from the sources consulted for this project, including the earlier discovery research. It is not a claim to exhaust everything written about the restaurant. The invitation still contains four stories; this catalogue is an editorial selection bank, not extra interface content.
+Research inventory, 21 October 2026. This is the complete candidate list extracted from the sources consulted for this project, including the earlier discovery research. It is not a claim to exhaust everything written about the restaurant. The owner subsequently selected entries 10, 14, 6, 1, 13 and 33 for the live curiosity layer. The remaining entries stay in this editorial selection bank. Practical chef, restaurant, location and current-menu access is a separate layer.
 
 **OBSERVED** means the named source contains the claim. Historical reporting remains historical; it is not confirmation of present-day service. None of the dishes, wines, rooms or dog arrangements below is a promise about the CCGS dinner. The owner specifies Wednesday 4 November 2026 at 19:00, with replies in the Consultants WhatsApp chat.
 
