@@ -13,3 +13,7 @@ Direct access: executive chef Steven Connolly and cooking philosophy; restaurant
 Curiosities: exactly catalogue entries 10, 14, 6, 1, 13 and 33, as selected by the owner on 21 October 2026. Each curiosity has a direct object: flame for happy kitchen, grill for open fire, leaf for seasonal pie, flower for the 2019 menu, wine glass for wine and collar for the dog welcome. Historical dishes are labelled 2019 and are not advertised as today's menu. The Dog Day photograph retains its accurate contextual credit without introducing an unselected Dog Day story.
 
 Runtime copy and route groups live in `src/lib/discovery.ts`. Source evidence and limits remain in `DISCOVERIES.md` and `CURIOSITY-CATALOGUE.md`. The former Rossetti and chef-origin narratives remain research material, outside the selected interface. No wedding discovery returns.
+
+## RSVP update — 21 October 2026
+
+RSVP now links to `/rsvp` for first name, surname, optional dietary requirements and confirmation. The Consultants WhatsApp chat remains the fallback and correction route. The private organiser register is `/guests`. This owner-authorised change supersedes the earlier WhatsApp-only instruction.

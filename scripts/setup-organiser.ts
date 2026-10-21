@@ -1,0 +1,13 @@
+import { existsSync, writeFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { randomBytes, scryptSync } from 'node:crypto';
+import { dataDirectory } from '../src/lib/server/guest-store.ts';
+const directory = dataDirectory();
+const credentialsPath = join(directory, 'organiser.json');
+if (existsSync(credentialsPath)) throw new Error('Organiser access already exists. No credentials were changed.');
+const password = randomBytes(24).toString('base64url');
+const salt = randomBytes(32).toString('hex');
+writeFileSync(credentialsPath, JSON.stringify({ salt, hash: scryptSync(password, salt, 64).toString('hex') }), { mode: 0o600, flag: 'wx' });
+const handover = join(directory, 'organiser-access.txt');
+writeFileSync(handover, `CCGS Autumn Event — organiser access\n\nSign in at /guests on your invitation site.\nPassword: ${password}\n\nKeep this file private. Store the password in your password manager.\n`, { mode: 0o600, flag: 'wx' });
+console.log(`Organiser access created. Private password handover: ${handover}`);

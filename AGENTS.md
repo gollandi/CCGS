@@ -1,5 +1,9 @@
 # Codex project instructions
 
+## Latest RSVP change — 21 October 2026
+
+The owner has explicitly authorised a self-service RSVP and private guest register, plus Vercel/database creation and deployment for this release. This supersedes WhatsApp-only RSVP and the earlier no-deployment boundary for this authorised task. See `docs/RSVP-OPERATIONS.md`. Preserve the approved invitation and never commit guest data or credentials.
+
 ## Read before implementation
 
 1. `PRODUCT.md` and `DESIGN.md` — current scope and observed visual system.

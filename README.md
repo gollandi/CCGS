@@ -13,7 +13,7 @@ Production preview: `pnpm build` then `pnpm start --hostname 0.0.0.0 --port 3216
 
 ## Current revision
 
-A restrained sans serif invitation, a procedural translucent light field and four objects revealing sourced stories about wine, the executive chef, dogs and an unlikely neighbour. Touch or drag an object, or use Tab and Enter/Space. Escape or the return control closes the story. The pause control selects still artwork. System reduced motion and rendering failures retain a static fallback. Calendar export is functional; RSVP response collection is not configured.
+A restrained sans serif invitation, a procedural translucent light field and four objects revealing sourced stories about wine, the executive chef, dogs and an unlikely neighbour. Touch or drag an object, or use Tab and Enter/Space. Escape or the return control closes the story. The pause control selects still artwork. System reduced motion and rendering failures retain a static fallback. Calendar export is functional. RSVP now opens a name and optional dietary-requirements form; the private organiser register is at `/guests`. See `docs/RSVP-OPERATIONS.md` for storage, access and deployment.
 
 - [Product and current owner direction](PRODUCT.md)
 - [Built design system](DESIGN.md)

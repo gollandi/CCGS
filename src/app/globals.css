@@ -159,3 +159,5 @@
  .membrane-hint{display:none}
  .object-caption,.wine-marker>span{font-size:9px}
 }
+
+.rsvp-note>span{display:inline-flex;align-items:center;gap:8px}.rsvp-note svg{width:16px;height:16px}

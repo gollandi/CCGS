@@ -23,3 +23,7 @@ One viewport in ordinary use; retain compact internal reading scroll and extreme
 
 ## Evidence
 Source extraction records the implemented slice in DESIGN.md and .impeccable/design.json. Browser observations and their limits belong in docs/REFRACTION-REVIEW.md; observed coverage is Safari desktop and Chrome responsive layouts, not physical iPhone testing. The membrane effect has explicit owner approval; the revised portal positions and overall implementation still require review. Physical iPhone reliability is unverified. Four concept PNGs retain their provenance in public/references. Discovery sources and limits remain in docs/DISCOVERIES.md; the approved flyer supplies event facts, not current restaurant menu evidence.
+
+## RSVP register — 21 October 2026
+
+The owner now requests self-registration through RSVP with first name, surname and optional dietary requirements, plus a private organiser register. Vercel and a persistent database are explicitly selected; creation and deployment are authorised for this release. This supersedes the WhatsApp-only RSVP instruction above. The Consultants chat remains the fallback and route for corrections. See docs/RSVP-OPERATIONS.md.
