@@ -3,8 +3,8 @@
 ## Read before implementation
 
 1. `PRODUCT.md` and `DESIGN.md` — current scope and observed visual system.
-2. `docs/REFRACTION-REVIEW.md` — current slice review, browser evidence and unresolved limits.
-3. `docs/CONTENT.md` and `docs/DISCOVERIES.md` — event copy, discovery evidence and unresolved RSVP.
+2. `docs/MEMBRANE-REVIEW.md` — current slice review, browser evidence and unresolved limits.
+3. `docs/CONTENT.md` and `docs/DISCOVERIES.md` — event copy, discovery evidence and confirmed WhatsApp reply route.
 4. `public/references/README.md` and `public/references/manifest.json` — reference provenance and usage limits.
 5. `docs/CREATIVE-DIRECTION.md`, `docs/CODEX-HANDOFF.md` and `docs/V2-REVIEW.md` — earlier decisions and V2 context, subordinate to the latest direction below.
 
@@ -16,7 +16,7 @@ The opening is finite, then still. No floating translucent ribbons, perpetual fl
 
 ## Preserve content and working access
 
-- Keep the event immediately understandable and usable before animation or JavaScript: title/year, date/time, venue/address, CONSULTANT ONLY, RSVP status and the celebration footer.
+- Keep the event immediately understandable and usable before animation or JavaScript: title/year, date/time, venue/address, CONSULTANT ONLY, RSVP instruction and the celebration footer.
 - Preserve one viewport in ordinary use, touch and keyboard access, reduced motion, static fallback and source links. Keep compact story scrolling and extreme narrow-screen reflow as deliberate accessibility escapes.
 - Keep the four sourced narratives. Do not invent historical facts, event wines, food, pet arrangements, guest counts, family headlines or patient stories as decoration.
 - Reference PNGs are concept artwork, not verified venue photography. Do not reproduce incidental labels as facts, regenerate missing references or claim inaccessible assets exist.
@@ -29,6 +29,6 @@ Use the dedicated branch `feat/refraction-art-slice`. Do not merge into main wit
 
 ## Current repository state
 
-Next.js, React and TypeScript with pnpm. The latest owner direction restores a single transparent folded surface, using the supplied image for light and material only. The broken-line experiment was also rejected. Keep all text sans serif (Manrope). The surface uses demand rendering, local deformation and a finite opening score. The owner rejected the large circle and exposed “lunch.”. Neither is present in this revision. First activation reveals a small “Not”; second activation moves it into the heading. A deliberate pull also opens the story. Escape resets the first-contact state or closes the story. Other discoveries are unchanged. The static fallback is a folded-surface SVG. Story-entry cleanup restores readable content when motion is paused. Keep this one slice under review before extending the treatment. See docs/FOLD-REVIEW.md.
+Next.js, React and TypeScript with pnpm. On 21 October the owner explicitly liked the transparent membrane over the actual restaurant photograph, then requested only improved portal placement. Preserve that material effect. It has two open, continuous boundaries, no central fold and no pointed closed shape. A local touch indentation refracts the background texture. Dragging explores without opening wine; a tap or Enter opens its story directly. There is no first-contact word reveal. The chef, dog and neighbourhood portals follow the lower curve in reading order, with distinct mobile positions. All four stories include sourced images; the neighbourhood image is a contextual map. RSVP is a visible instruction to reply in the Consultants WhatsApp chat, without a link. Date and time remain prominent: 4 November 2026, 19:00. See docs/MEMBRANE-REVIEW.md and docs/CURIOSITY-CATALOGUE.md. Earlier prohibitions on any transparent surface are superseded by the owner's repeated material reference and this explicit approval.
 
 Source observations are recorded in DESIGN.md; browser evidence belongs in docs/REFRACTION-REVIEW.md. Safari desktop and Chrome responsive observations do not establish physical iPhone reliability or all-device certification. Historical M1/V2 reviews are not current creative approval.

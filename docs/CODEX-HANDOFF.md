@@ -1,6 +1,6 @@
 # Current handoff correction — 20 October 2026
 
-The owner rejected M1 and explicitly commissioned a replacement with several sourced discoveries. The old milestone approval boundary below no longer prevents this authorised revision. No serif, no rigid decorative bow, no wedding discovery, no literal mockup copy. See PRODUCT.md, DESIGN.md, docs/DISCOVERIES.md and docs/V2-REVIEW.md for current implementation and validation. RSVP destination remains unconfigured.
+The owner rejected M1 and explicitly commissioned a replacement with several sourced discoveries. The old milestone approval boundary below no longer prevents this authorised revision. No serif, no rigid decorative bow, no wedding discovery, no literal mockup copy. See PRODUCT.md, DESIGN.md, docs/DISCOVERIES.md and docs/V2-REVIEW.md for current implementation and validation. RSVP is now a visible instruction to reply in the Consultants WhatsApp chat (owner, 21 October 2026). See docs/MEMBRANE-REVIEW.md for the current material and photography revision.
 
 # Codex handoff
 

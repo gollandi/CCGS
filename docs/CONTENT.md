@@ -4,7 +4,7 @@ CCGS Annual Autumn Event 2026. Wednesday 4 November 2026, 19:00. No. Fifty Cheyn
 
 The supporting invitation line is “An evening for what comes next.” Calendar export contains the confirmed start and location; no end time is invented. Saving a calendar entry is not an RSVP.
 
-RSVP is unconfigured. No guest count. No patient stories as decoration.
+RSVP: please reply in the Consultants WhatsApp chat. The owner confirmed this route on 21 October 2026; no link, form or automated message is required. No guest count. No patient stories as decoration.
 
 ## Current discoveries
 

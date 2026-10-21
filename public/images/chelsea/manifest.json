@@ -1,0 +1,55 @@
+{
+  "checked": "2026-10-21",
+  "status": "Downloaded and visually inspected for the local preview. No public deployment.",
+  "rights": "Third-party website assets. Sources and observed credits retained; no open licence or independent reuse permission inferred.",
+  "assets": [
+    {
+      "file": "restaurant.jpg",
+      "source_url": "https://fiftycheyne.com/wp-content/uploads/2019/11/191023_LB_FiftyCheyne_001A-web-copy.jpg",
+      "source_page": "https://fiftycheyne.com/",
+      "description": "Dining room and bar; not a photograph of the CCGS dinner.",
+      "credit": "No. Fifty Cheyne",
+      "width": 1280,
+      "height": 720,
+      "bytes": 359220,
+      "sha256": "7b03686c4d1cf96828e8b6c73e2221e3814f1a5684b7154a5b90813a5a21c4e0",
+      "processing": "Resized to 1280px maximum and JPEG recompressed for mobile"
+    },
+    {
+      "file": "steven-connolly.jpg",
+      "source_url": "https://fiftycheyne.com/wp-content/uploads/2026/09/No.-Fifty-Cheyne-@mooncakepictures-8-e1789642603233-1024x598.jpg",
+      "source_page": "https://fiftycheyne.com/meet-steven-connolly-executive-chef/",
+      "description": "Steven Connolly in the restaurant.",
+      "credit": "No. Fifty Cheyne / Mooncake Pictures (filename attribution)",
+      "width": 1024,
+      "height": 598,
+      "bytes": 70459,
+      "sha256": "f04605a9b8ce13c8d1af00c6b79ac908166f866b19501d01c6d916f992d1af8d",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "chelsea-dog-day.jpg",
+      "source_url": "https://www.kingsroad.co.uk/wp-content/uploads/2026/09/CDD-KR-website-690x690.jpg",
+      "source_page": "https://www.kingsroad.co.uk/experience/chelsea-dog-day-2026/",
+      "description": "Photograph used to promote Chelsea Dog Day 2026; photograph capture date unverified.",
+      "credit": "King’s Road Partnership; individual photographer not stated on page",
+      "width": 690,
+      "height": 690,
+      "bytes": 127296,
+      "sha256": "30ab571be90a2ef7eb2711b4ad32de80ec9dd44e864b6d133cb2c487450332a2",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "cheyne-map.jpg",
+      "source_url": "https://fiftycheyne.com/wp-content/uploads/2020/06/hero_11_contact2-scaled.jpg",
+      "source_page": "https://fiftycheyne.com/contact/",
+      "description": "Illustrated map of Chelsea and the Thames, not a photograph of Rossetti’s house.",
+      "credit": "No. Fifty Cheyne; map artist not identified",
+      "width": 1280,
+      "height": 472,
+      "bytes": 334604,
+      "sha256": "e3a4409059b2e2991f60072432664d2509330e8a70bb35ba3c25f5e9ac5d5405",
+      "processing": "Resized to 1280px maximum and JPEG recompressed for mobile"
+    }
+  ]
+}

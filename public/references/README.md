@@ -28,3 +28,7 @@ Read [creative direction](../../docs/CREATIVE-DIRECTION.md) before using these i
 The complete four-image handoff set is present. This is not a complete archive of every conversation turn. Other intermediate flyers, third-party research imagery and the rejected atom prototype are not implementation assets in this transfer. No missing image is represented by a placeholder, a generated replacement or a claimed upload.
 
 The existing creative and content documents remain authoritative. RSVP remains unconfigured and discovery facts require sources. The next implementation milestone is M1, followed by creative approval before M2.
+
+## Sourced story imagery — 21 October 2026
+
+The four approved concept PNGs above remain concept references. Actual website photographs and the neighbourhood map are stored separately in `public/images/chelsea/`, with source URLs, descriptions, credit, processing, byte sizes and SHA-256 hashes in that directory’s `manifest.json`. No inaccessible image is represented as downloaded.
