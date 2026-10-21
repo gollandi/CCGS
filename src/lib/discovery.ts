@@ -5,7 +5,7 @@ export type Story = {
   catalogueNumber?: number;
 };
 const chefSource='https://fiftycheyne.com/meet-steven-connolly-executive-chef/';
-export const currentMenuUrl='https://fiftycheyne.com/menus/';
+export const currentMenuUrl='https://fiftycheyne.com/menu/';
 const restaurant={src:'/images/chelsea/restaurant.jpg',alt:'Tables and the bar at No. Fifty Cheyne',credit:'No. Fifty Cheyne · dining room',source:'https://fiftycheyne.com/'};
 const chef={src:'/images/chelsea/steven-connolly.jpg',alt:'Executive chef Steven Connolly in the restaurant',credit:'No. Fifty Cheyne / Mooncake Pictures',source:chefSource};
 const map={src:'/images/chelsea/cheyne-map.jpg',alt:'Illustrated map of Chelsea and the Thames',credit:'No. Fifty Cheyne · neighbourhood map',source:'https://fiftycheyne.com/contact/'};
