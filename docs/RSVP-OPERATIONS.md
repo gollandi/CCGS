@@ -27,6 +27,14 @@ Target: Vercel project `ccgs-autumn-2026`, team `GGO Med ltd` (`ggo-med`), Node 
 
 Production aliases are public; Vercel protects preview and unique deployment URLs. `/guests` remains protected by the application's own organiser login. The deployment is not a substitute for the application login.
 
+## Production verification — 21 October 2026
+
+OBSERVED: deployment `dpl_FKRCXXzz8p6pEKUD1FjHGdEDTkGQ` reached `READY` from runtime commit `0797dd87b2da3f25595798266d4d6180a3058233`. Public invitation: https://ccgs-autumn-2026.vercel.app/ ; organiser access: https://ccgs-autumn-2026.vercel.app/guests . Later documentation-only commits do not change that deployed runtime.
+
+A synthetic RSVP submitted through the production browser reached the confirmation state and was independently read back through the authenticated API from the connected database. CSV export returned 200; anonymous list/export requests returned 401; a cross-origin authenticated write returned 403; a signed-out session returned 401. The session cookie was Secure, HttpOnly and SameSite=Strict, and private responses were no-store. The test record was reversibly cancelled after verification, leaving zero confirmed guests at that moment.
+
+Production form and invitation were inspected at a 390px responsive viewport and the form at desktop width. The isolated local register was checked with 80-character first and last names: document width remained 390px and the 340px heading had no internal overflow. Captures are evidence of browser responsive emulation, not a physical phone test. The organiser password handover is stored locally outside the repository, with file permissions 0600.
+
 ## Checks and limits
 
 Nineteen automated tests pass. A separate local PostgreSQL 17 database was used for synthetic browser and API checks: submit, confirmation, organiser sign-in, cancellation, restoration, CSV, identical retry, conflicting changed retry, unauthorised reads and cross-site rejection. Actual names were not used in testing. Mobile and desktop captures are stored in the chat's outputs folder.

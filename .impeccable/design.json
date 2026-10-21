@@ -184,6 +184,20 @@
   },
   "components": [
     {
+      "name": "RSVP primary action",
+      "kind": "button",
+      "description": "21 October 2026 RSVP extension: ink action with copper hover and visible focus. Visual specimen only; no reply is submitted.",
+      "html": "<button type=\"button\" class=\"ds-rsvp-primary\">Confirm my place<svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-rsvp-primary{display:flex;align-items:center;justify-content:space-between;gap:24px;font-family:Manrope,sans-serif;font-size:14px;background:var(--ink,#302d2b);color:var(--paper,#eeebe5);padding:15px 20px;min-height:52px;border:1px solid var(--ink,#302d2b);border-radius:0;cursor:pointer}.ds-rsvp-primary:hover{background:var(--copper,#916242)}.ds-rsvp-primary:focus-visible{outline:2px solid var(--copper,#916242);outline-offset:7px}.ds-rsvp-primary:disabled{opacity:.55;cursor:wait}.ds-rsvp-primary svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.2}"
+    },
+    {
+      "name": "RSVP name field",
+      "kind": "input",
+      "description": "21 October 2026 RSVP extension: labelled square-edged field with 16px input text, a 48px minimum height and copper keyboard focus. Empty visual specimen.",
+      "html": "<label class=\"ds-rsvp-field\">First name<input type=\"text\" autocomplete=\"given-name\" required maxlength=\"80\"/></label>",
+      "css": ".ds-rsvp-field{display:grid;gap:8px;font-family:Manrope,sans-serif;font-size:14px;line-height:1.5;color:var(--ink,#302d2b)}.ds-rsvp-field input{width:100%;min-width:0;min-height:48px;border:1px solid var(--line,#c8bdb0);border-radius:0;background:#f8f5ef;color:var(--ink,#302d2b);padding:12px;font-family:Manrope,sans-serif;font-size:16px}.ds-rsvp-field input:focus-visible{outline:2px solid var(--copper,#916242);outline-offset:3px}"
+    },
+    {
       "name": "Calendar download",
       "kind": "button",
       "refersTo": "calendar-link",
@@ -241,6 +255,11 @@
       "Persistent event information and existing sourced discoveries."
     ],
     "rules": [
+      {
+        "name": "The Practical Continuity Rule",
+        "body": "RSVP and the private guest register extend the invitation's Manrope, warm paper, ink and copper into clear forms and ruled rows. Preserve the approved invitation and membrane; these task surfaces introduce no new visual world.",
+        "section": "components"
+      },
       {
         "name": "The Legible Ground Rule",
         "body": "Essential event text stays on the paper ground and remains independent of the optical texture.",
