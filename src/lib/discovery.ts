@@ -53,7 +53,9 @@ export const practicalInformation: Story[]=[
 export const stories=[...discoveries,...practicalInformation];
 export const portals=[
   {object:'glass',prompt:'Swirl a little',label:'Explore the wine',stories:[0]},
-  {object:'flame',prompt:'Follow the warmth',label:'Discover the kitchen',stories:[1,4]},
+  {object:'flame',prompt:'Follow the warmth',label:'Discover the kitchen',stories:[1]},
   {object:'ring',prompt:'An unexpected guest',label:'Discover the dog welcome',stories:[2]},
-  {object:'leaf',prompt:'Turn over a leaf',label:'Discover changing menus',stories:[3,5]},
+  {object:'leaf',prompt:'Turn over a leaf',label:'Discover the seasonal pie',stories:[3]},
+  {object:'ember',prompt:'At the fire',label:'Discover the open grill',stories:[4]},
+  {object:'flower',prompt:'A taste of 2019',label:'Discover the historical menu',stories:[5]},
 ];

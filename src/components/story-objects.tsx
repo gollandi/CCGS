@@ -10,6 +10,14 @@ export function StoryObject({ kind, x = 0, y = 0 }: { kind: string; x?: number; 
       <radialGradient id={`${id}fire`} cx=".55" cy=".7" r=".65"><stop stopColor="#fffaf0" /><stop offset=".3" stopColor="#ffdfa3" /><stop offset=".64" stopColor="#df9147" stopOpacity=".65" /><stop offset="1" stopColor="#b05d31" stopOpacity="0" /></radialGradient>
       <filter id={`${id}soft`}><feGaussianBlur stdDeviation="3" /></filter>
     </defs>
+    {kind === 'ember' && <g stroke={`url(#${id}metal)`} strokeWidth="2" strokeLinecap="round">
+      <path d="M65 159 157 110M70 177 164 128M82 189 174 145"/>
+      <path d="M105 133Q86 112 111 88Q125 70 119 49Q153 85 133 113" fill={`url(#${id}fire)`} strokeWidth="1"/>
+    </g>}
+    {kind === 'flower' && <g stroke={`url(#${id}metal)`} strokeWidth="1.5" fill={`url(#${id}glass)`}>
+      <path d="M111 151Q69 149 62 104Q89 96 110 130Q96 88 115 53Q145 77 127 124Q150 92 177 109Q164 146 126 151Q149 169 138 194Q112 181 111 151Z"/>
+      <path d="M113 144Q95 174 91 211" fill="none"/><circle cx="116" cy="142" r="5" fill={`url(#${id}metal)`}/>
+    </g>}
     {kind === 'glass' && <g className="glass-body">
       <ellipse cx="110" cy="216" rx="43" ry="7" fill="#675345" opacity=".09" filter={`url(#${id}soft)`} />
       <path d="M63 47C51 89 49 120 67 140Q85 157 107 159L107 202Q104 211 76 212Q62 219 110 220Q159 218 144 212Q117 211 114 202L114 159Q145 154 159 139C176 115 167 73 158 47" fill={`url(#${id}glass)`} stroke="#a18b70" strokeOpacity=".48" strokeWidth=".8" />

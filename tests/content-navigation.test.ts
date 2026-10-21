@@ -8,6 +8,8 @@ test('the discovery layer contains exactly the six owner-selected catalogue entr
   assert.match(discoveries.find(s=>s.catalogueNumber===33)!.aside,/2019.*not today/);
 });
 test('every curiosity is reachable from exactly one object, separate from practical information',()=>{
+  assert.equal(portals.length,6);
+  assert.ok(portals.every(p=>p.stories.length===1));
   const routes=portals.flatMap(p=>p.stories);
   assert.deepEqual([...routes].sort((a,b)=>a-b),discoveries.map((_,i)=>i));
   assert.ok(routes.every(i=>stories[i]&&i<discoveries.length));
