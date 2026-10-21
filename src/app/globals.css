@@ -138,7 +138,7 @@
 /* Six direct discoveries: each has its own visible anchor on the membrane. */
 .experience:not(.has-story) .object-position-4{left:55%;top:32%;width:82px}
 .experience:not(.has-story) .object-position-5{left:80%;top:43%;width:82px}
-.story-object>.object,.wine-marker>.object{filter:saturate(.4);opacity:.9}
+.story-object>.object,.wine-marker>.object{filter:saturate(.5) contrast(1.2);opacity:1}
 .object-caption,.wine-marker>span{color:#55483e}
 .wine-marker{position:absolute;left:23%;top:29%;width:76px;transform:translate(-50%,-50%);display:block}
 .wine-marker>.object{display:block;width:100%;height:auto}
